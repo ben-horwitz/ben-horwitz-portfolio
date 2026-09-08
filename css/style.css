@@ -295,19 +295,18 @@ h1, h2 {
   aspect-ratio: 3 / 4;
   background: var(--bg-elevated);
   width: 400px;
-  transform: rotate(-1.4deg);
   box-shadow: 0 18px 34px rgba(20, 19, 15, 0.18);
   grid-column: 3;
   justify-self: end;
 }
 
 .hero-photo:hover {
-  transform: rotate(-1.4deg) translateY(-8px);
+  transform: translateY(-8px);
   box-shadow: 0 26px 44px rgba(20, 19, 15, 0.24);
 }
 
 .hero-photo img { transition: transform 0.3s ease; }
-.hero-photo:hover img { transform: scale(1.07); }
+.hero-photo:hover img { transform: scale(1.02); }
 
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
@@ -409,17 +408,11 @@ h1, h2 {
   background: var(--bg-elevated);
   overflow: hidden;
   flex-shrink: 0;
-  transform: rotate(0deg);
 }
 
-.card:nth-of-type(3n+1) .card-media { transform: rotate(-1deg); }
-.card:nth-of-type(3n+2) .card-media { transform: rotate(0.8deg); }
-.card:nth-of-type(3n+3) .card-media { transform: rotate(-0.6deg); }
-/* hover lifts the frame — keeping each card's own tilt, never resetting
-   it — and zooms the photo inside slightly. No spinning motion. */
-.card:nth-of-type(3n+1):hover .card-media { transform: rotate(-1deg) translateY(-6px); }
-.card:nth-of-type(3n+2):hover .card-media { transform: rotate(0.8deg) translateY(-6px); }
-.card:nth-of-type(3n+3):hover .card-media { transform: rotate(-0.6deg) translateY(-6px); }
+/* hover lifts the frame and barely zooms the photo inside — flat,
+   no tilt, no spinning motion */
+.card:hover .card-media { transform: translateY(-6px); }
 
 .card-media img, .card-media video {
   width: 100%;
@@ -428,7 +421,7 @@ h1, h2 {
   transition: transform 0.3s ease;
 }
 
-.card:hover .card-media img, .card:hover .card-media video { transform: scale(1.08); }
+.card:hover .card-media img, .card:hover .card-media video { transform: scale(1.02); }
 
 .card-tag {
   font-family: var(--font-mono);
@@ -549,12 +542,11 @@ h1, h2 {
   background: var(--bg-elevated);
   cursor: zoom-in;
   text-align: center;
-  transform: rotate(-1deg);
   box-shadow: 0 16px 30px rgba(20, 19, 15, 0.14);
 }
 
 .media-side:hover {
-  transform: rotate(-1deg) translateY(-6px);
+  transform: translateY(-6px);
   box-shadow: 0 22px 40px rgba(20, 19, 15, 0.19);
 }
 
@@ -617,21 +609,15 @@ h1, h2 {
   background: var(--bg-elevated);
   cursor: zoom-in;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
-  transform: rotate(-0.6deg);
   box-shadow: 0 14px 26px rgba(20, 19, 15, 0.13);
 }
 
-.story-media:nth-of-type(3n+2) { transform: rotate(0.7deg); }
-.story-media:nth-of-type(3n+3) { transform: rotate(-0.4deg); }
-
-/* lift toward the viewer on hover, tilt held fixed the whole time —
-   no rotating motion */
+/* lift toward the viewer on hover — flat at rest, no tilt, no
+   rotating motion */
 .story-media:hover {
-  transform: rotate(-0.6deg) translateY(-7px);
+  transform: translateY(-7px);
   box-shadow: 0 20px 34px rgba(20, 19, 15, 0.18);
 }
-.story-media:nth-of-type(3n+2):hover { transform: rotate(0.7deg) translateY(-7px); }
-.story-media:nth-of-type(3n+3):hover { transform: rotate(-0.4deg) translateY(-7px); }
 
 .story-media img, .story-media video {
   width: auto;
@@ -837,12 +823,9 @@ h1, h2 {
   box-shadow: 0 12px 22px rgba(20, 19, 15, 0.14);
 }
 
-.about-photos img:nth-of-type(1) { transform: rotate(-1.4deg); margin-top: 18px; }
-.about-photos img:nth-of-type(2) { transform: rotate(1.1deg); }
-/* lift on hover, tilt unchanged — no rotating motion */
-.about-photos img:nth-of-type(1):hover { transform: rotate(-1.4deg) translateY(-6px); }
-.about-photos img:nth-of-type(2):hover { transform: rotate(1.1deg) translateY(-6px); }
-.about-photos img:hover { box-shadow: 0 20px 32px rgba(20, 19, 15, 0.2); }
+.about-photos img:nth-of-type(1) { margin-top: 18px; }
+/* lift on hover — flat at rest, no rotating motion */
+.about-photos img:hover { transform: translateY(-6px); box-shadow: 0 20px 32px rgba(20, 19, 15, 0.2); }
 
 .about-video {
   margin-top: 26px;
@@ -850,17 +833,16 @@ h1, h2 {
   background: var(--bg-elevated);
   cursor: zoom-in;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  transform: rotate(0.8deg);
   width: 82%;
   box-shadow: 0 12px 22px rgba(20, 19, 15, 0.14);
 }
 
 .about-video:hover {
-  transform: rotate(0.8deg) translateY(-6px);
+  transform: translateY(-6px);
   box-shadow: 0 20px 32px rgba(20, 19, 15, 0.2);
 }
 .about-video video { width: 100%; max-height: 480px; object-fit: cover; transition: transform 0.3s ease; }
-.about-video:hover video { transform: scale(1.06); }
+.about-video:hover video { transform: scale(1.02); }
 
 .about-wide-photo {
   margin-top: 26px;
@@ -868,12 +850,11 @@ h1, h2 {
   background: var(--bg-elevated);
   cursor: zoom-in;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  transform: rotate(-0.5deg);
   box-shadow: 0 12px 22px rgba(20, 19, 15, 0.14);
 }
 
 .about-wide-photo:hover {
-  transform: rotate(-0.5deg) translateY(-6px);
+  transform: translateY(-6px);
   box-shadow: 0 20px 32px rgba(20, 19, 15, 0.2);
 }
 .about-wide-photo img { width: 100%; display: block; }
