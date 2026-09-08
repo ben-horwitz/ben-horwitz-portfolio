@@ -43,9 +43,10 @@ body {
      that visibly repeats as the page scrolls. */
   background-color: var(--bg);
   background-image:
-    radial-gradient(1700px 1050px at 12% -10%, #fdf9ea 0%, rgba(253, 249, 234, 0) 70%),
-    radial-gradient(1400px 1000px at 96% 112%, #d2c6a3 0%, rgba(210, 198, 163, 0) 70%),
-    radial-gradient(2400px 1500px at 50% 40%, rgba(20, 19, 15, 0) 58%, rgba(20, 19, 15, 0.05) 100%);
+    radial-gradient(1800px 1100px at 12% -10%, #fdf9ea 0%, rgba(253, 249, 234, 0) 72%),
+    radial-gradient(1500px 1050px at 96% 112%, #cfc09a 0%, rgba(207, 192, 154, 0) 72%),
+    radial-gradient(1100px 950px at 100% 32%, rgba(138, 42, 28, 0.06) 0%, rgba(138, 42, 28, 0) 65%),
+    radial-gradient(2400px 1500px at 50% 40%, rgba(20, 19, 15, 0) 55%, rgba(20, 19, 15, 0.06) 100%);
   background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-sans);
@@ -78,7 +79,7 @@ h1, h2 {
   font-optical-sizing: auto;
 }
 
-.brand { font-family: var(--font-display); font-style: italic; font-weight: 600; }
+.brand { font-family: var(--font-mono); font-weight: 600; }
 
 .wrap {
   max-width: var(--max-width);
@@ -268,7 +269,7 @@ h1, h2 {
   grid-template-columns: 1.1fr 0.5fr auto;
   gap: 40px;
   align-items: start;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--stamp);
   padding-top: 18px;
 }
 
@@ -361,6 +362,7 @@ h1, h2 {
   font-style: italic;
   font-size: 1.5rem;
   margin: 0;
+  color: var(--stamp);
 }
 
 .section-title .count {
@@ -587,7 +589,7 @@ h1, h2 {
   font-style: italic;
   font-weight: 500;
   font-size: 1.3rem;
-  color: var(--text);
+  color: var(--stamp);
   margin: 30px 0 10px;
 }
 .prose p { margin: 0 0 15px; }
@@ -609,7 +611,7 @@ h1, h2 {
   font-style: italic;
   font-weight: 500;
   font-size: 1.3rem;
-  color: var(--text);
+  color: var(--stamp);
   margin: 4px 0 12px;
 }
 .story-text p { margin: 0 0 15px; }
@@ -782,7 +784,7 @@ h1, h2 {
   display: flex;
   justify-content: space-between;
   padding: 22px 0;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--stamp);
   margin: 20px auto 60px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -879,7 +881,7 @@ h1, h2 {
 .fact-sheet {
   margin: 32px 0;
   padding-top: 18px;
-  border-top: 1px solid var(--border);
+  border-top: 2px solid var(--stamp);
   font-size: 0.94rem;
 }
 
