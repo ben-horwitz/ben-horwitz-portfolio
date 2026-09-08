@@ -7,7 +7,7 @@
 <meta name="description" content="A scratch-built vat photopolymerization 3D printer with a PLC-driven UV/LCD masking system.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
   <div class="project-hero">
     <div class="project-hero-layout">
       <div>
-        <p class="eyebrow">3D Printing / Controls — 01 / 06</p>
+        <p class="eyebrow">3D Printing / Controls <span class="eyebrow-index">— 01 / 06</span></p>
         <h1>HV‑VPP Resin Printer</h1>
         <p class="tagline">
           A scratch-built vat photopolymerization (resin) 3D printer, with a
@@ -55,32 +55,32 @@
        the real story: what the acronym stands for, what resin/process it runs,
        build volume, and what made this build hard. -->
   <div class="story">
-    <div class="story-text">
-      <p>
-        <strong>What it does:</strong> the printer cures a photopolymer resin
-        layer by layer using a masked UV light source, projected through an
-        LCD panel that acts as a dynamic mask for each slice. A PLC handles
-        the timing and sequencing between the UV exposure, the LCD mask, and
-        Z-axis motion.
-      </p>
-    </div>
-
-    <div class="story-media-pair">
-      <figure class="story-media" data-lightbox="../assets/video/hv-vpp-uv-light-controls.mp4"
-              data-caption="PLC-driven UV light controls.">
-        <video muted loop playsinline preload="none"
-               poster="../assets/img/posters/hv-vpp-uv-light-controls-poster.jpg"
-               data-autoplay-preview>
-          <source src="../assets/video/hv-vpp-uv-light-controls.mp4" type="video/mp4">
-        </video>
-        <figcaption>UV light controls</figcaption>
-      </figure>
+    <div class="story-row">
+      <div class="story-text">
+        <p>
+          <strong>What it does:</strong> the printer cures a photopolymer
+          resin layer by layer using a masked UV light source, projected
+          through an LCD panel that acts as a dynamic mask for each slice. A
+          PLC handles the timing and sequencing between the UV exposure, the
+          LCD mask, and Z-axis motion.
+        </p>
+      </div>
       <figure class="story-media" data-lightbox="../assets/img/hv-vpp-lcd-mask.jpg"
               data-caption="The LCD panel that masks UV light per layer.">
         <img src="../assets/img/hv-vpp-lcd-mask.jpg" alt="LCD masking panel">
         <figcaption>LCD mask</figcaption>
       </figure>
     </div>
+
+    <figure class="story-media" data-lightbox="../assets/video/hv-vpp-uv-light-controls.mp4"
+            data-caption="PLC-driven UV light controls.">
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/hv-vpp-uv-light-controls-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/hv-vpp-uv-light-controls.mp4" type="video/mp4">
+      </video>
+      <figcaption>UV light controls</figcaption>
+    </figure>
 
     <div class="story-text">
       <h3>Getting It Reliable</h3>
@@ -117,42 +117,34 @@
     <div class="story-text">
       <h3>The Machine</h3>
       <p>
-        The PLC and the printer's electronics sit alongside the frame; the
-        parts below are the machine itself, inside and out.
+        The PLC and the printer's electronics sit alongside the frame — click
+        through for the controls, the inside, and the finished machine.
       </p>
     </div>
 
-    <div class="story-media-pair">
-      <figure class="story-media" data-lightbox="../assets/img/hv-vpp-plc.jpg"
-              data-caption="The PLC handling exposure and motion sequencing.">
-        <img src="../assets/img/hv-vpp-plc.jpg" alt="PLC controller">
-        <figcaption>PLC controls</figcaption>
-      </figure>
-      <figure class="story-media" data-lightbox="../assets/img/hv-vpp-inside-machine.jpg"
-              data-caption="Inside the printer.">
-        <img src="../assets/img/hv-vpp-inside-machine.jpg" alt="Inside the printer">
-        <figcaption>Inside the machine</figcaption>
-      </figure>
+    <div class="story-slideshow">
+      <div class="slide active">
+        <img src="../assets/img/hv-vpp-plc.jpg" alt="PLC controller"
+             data-lightbox="../assets/img/hv-vpp-plc.jpg" data-caption="The PLC handling exposure and motion sequencing.">
+      </div>
+      <div class="slide">
+        <img src="../assets/img/hv-vpp-inside-machine.jpg" alt="Inside the printer"
+             data-lightbox="../assets/img/hv-vpp-inside-machine.jpg" data-caption="Inside the printer.">
+      </div>
+      <div class="slide">
+        <img src="../assets/img/hv-vpp-printer-outside.jpg" alt="Printer, exterior view"
+             data-lightbox="../assets/img/hv-vpp-printer-outside.jpg" data-caption="The full machine.">
+      </div>
+      <div class="slide">
+        <img src="../assets/img/hv-vpp-nylon-parts.jpg" alt="Nylon printed parts"
+             data-lightbox="../assets/img/hv-vpp-nylon-parts.jpg" data-caption="Nylon parts used in the build.">
+      </div>
+      <div class="slide">
+        <img src="../assets/img/hv-vpp-parts.jpg" alt="Machine parts"
+             data-lightbox="../assets/img/hv-vpp-parts.jpg" data-caption="Component parts of the machine.">
+      </div>
     </div>
-
-    <div class="story-media-pair">
-      <figure class="story-media" data-lightbox="../assets/img/hv-vpp-printer-outside.jpg"
-              data-caption="The full machine.">
-        <img src="../assets/img/hv-vpp-printer-outside.jpg" alt="Printer, exterior view">
-        <figcaption>Full machine</figcaption>
-      </figure>
-      <figure class="story-media" data-lightbox="../assets/img/hv-vpp-nylon-parts.jpg"
-              data-caption="Nylon parts used in the build.">
-        <img src="../assets/img/hv-vpp-nylon-parts.jpg" alt="Nylon printed parts">
-        <figcaption>Nylon parts</figcaption>
-      </figure>
-    </div>
-
-    <figure class="story-media" data-lightbox="../assets/img/hv-vpp-parts.jpg"
-            data-caption="Component parts of the machine.">
-      <img src="../assets/img/hv-vpp-parts.jpg" alt="Machine parts">
-      <figcaption>Component parts</figcaption>
-    </figure>
+    <p class="slideshow-caption">PLC &middot; inside the machine &middot; full machine &middot; nylon parts &middot; components</p>
   </div>
 
   <div class="project-nav">

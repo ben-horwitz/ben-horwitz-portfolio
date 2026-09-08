@@ -33,6 +33,49 @@ document.addEventListener('DOMContentLoaded', () => {
     previewVideos.forEach((v) => observer.observe(v));
   }
 
+  // ---------- compact slideshows ----------
+  // A .story-slideshow holds a few .slide elements (each one photo or
+  // video). Auto-build prev/next + dot nav and cycle through them.
+  document.querySelectorAll('.story-slideshow').forEach((show) => {
+    const slides = Array.from(show.querySelectorAll('.slide'));
+    if (slides.length < 2) return;
+
+    let current = slides.findIndex((s) => s.classList.contains('active'));
+    if (current < 0) current = 0;
+    slides.forEach((s, i) => s.classList.toggle('active', i === current));
+
+    const dots = document.createElement('div');
+    dots.className = 'slideshow-dots';
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === current ? ' active' : '');
+      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+      dots.appendChild(dot);
+    });
+
+    const prevBtn = document.createElement('button');
+    prevBtn.className = 'slideshow-nav prev';
+    prevBtn.setAttribute('aria-label', 'Previous slide');
+    prevBtn.innerHTML = '&lsaquo;';
+
+    const nextBtn = document.createElement('button');
+    nextBtn.className = 'slideshow-nav next';
+    nextBtn.setAttribute('aria-label', 'Next slide');
+    nextBtn.innerHTML = '&rsaquo;';
+
+    show.append(prevBtn, nextBtn, dots);
+
+    function go(i) {
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === current));
+      dots.querySelectorAll('.dot').forEach((d, idx) => d.classList.toggle('active', idx === current));
+    }
+
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); go(current - 1); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); go(current + 1); });
+    dots.querySelectorAll('.dot').forEach((d, i) => d.addEventListener('click', (e) => { e.stopPropagation(); go(i); }));
+  });
+
   // ---------- lightbox ----------
   // Any element with [data-lightbox] opens an enlarged view + caption.
   // Items are grouped in document order so prev/next cycles through
