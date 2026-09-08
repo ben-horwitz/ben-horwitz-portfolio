@@ -380,31 +380,21 @@ h1, h2 {
 .card {
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding: 40px 0;
+  gap: 28px;
+  padding: 26px 0;
   border-top: 1px solid var(--border-soft);
   transition: none;
 }
 
 .card:last-child { border-bottom: 1px solid var(--border-soft); }
 
-/* every third row gets a little more air — the list breathes instead
-   of ticking along at one identical interval */
-.card:nth-child(3n) { padding: 56px 0; }
-
-/* the project number is the one idea this list is built around: not
-   metadata off to the side, an actual anchor the row is measured
-   against. Same device reappears on each project's own page. */
 .card-index {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(3.2rem, 6vw, 4.6rem);
-  line-height: 1;
+  font-size: 2.1rem;
   color: var(--border-soft);
-  width: 1.2em;
+  width: 1.4em;
   flex-shrink: 0;
-  text-align: right;
-  padding-right: 4px;
   transition: color 0.15s ease;
 }
 
@@ -413,7 +403,6 @@ h1, h2 {
 .card-media {
   position: relative;
   width: 168px;
-  order: 1;
   /* every source photo/video for these cards is actually shot portrait —
      4:3 landscape was cropping away well over half of each one */
   aspect-ratio: 3 / 4;
@@ -421,11 +410,6 @@ h1, h2 {
   overflow: hidden;
   flex-shrink: 0;
 }
-
-/* the photo swaps sides row to row — image-right, then image-left —
-   so consecutive rows read as a considered rhythm rather than the
-   same card stamped out six times. The number stays put as the anchor. */
-.card:nth-child(even) .card-media { order: 3; }
 
 /* hover lifts the frame and barely zooms the photo inside — flat,
    no tilt, no spinning motion */
@@ -450,12 +434,12 @@ h1, h2 {
   margin-bottom: 5px;
 }
 
-.card-body { min-width: 0; flex: 1; order: 2; }
+.card-body { min-width: 0; flex: 1; }
 
 .card-body h3 {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 1.65rem;
+  font-size: 1.55rem;
   margin: 0 0 6px;
   letter-spacing: -0.01em;
 }
@@ -470,16 +454,9 @@ h1, h2 {
 }
 
 @media (max-width: 620px) {
-  .card { flex-wrap: wrap; gap: 14px 20px; padding: 28px 0 !important; }
-  .card-index {
-    font-size: 1.6rem;
-    width: auto;
-    text-align: left;
-    padding-right: 0;
-    order: -1;
-  }
-  .card-media, .card:nth-child(even) .card-media { width: 100px; order: 0; }
-  .card-body { order: 0; }
+  .card { flex-wrap: wrap; gap: 14px 20px; }
+  .card-index { font-size: 1.5rem; width: auto; order: -1; }
+  .card-media { width: 100px; }
 }
 
 /* ---------- project detail page ---------- */
@@ -514,38 +491,11 @@ h1, h2 {
   .project-hero-layout { grid-template-columns: 1fr; gap: 28px; }
 }
 
-/* the same anchor device as the homepage list — the project's number
-   pulled out to real size instead of buried in small parenthetical
-   text, so it's one idea that follows the project from the index
-   list onto its own page */
-.project-title-row {
-  display: flex;
-  align-items: flex-end;
-  gap: 22px;
-  margin: 6px 0 0;
-}
-
-.project-number {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(3.4rem, 7vw, 5.2rem);
-  line-height: 0.82;
-  color: var(--border-soft);
-  flex-shrink: 0;
-}
-
-.project-title-row .eyebrow { margin: 0 0 2px; }
-
 .project-hero h1 {
   font-weight: 500;
   font-size: clamp(2.3rem, 5vw, 3.4rem);
   letter-spacing: -0.01em;
-  margin: 0 0 18px;
-}
-
-@media (max-width: 560px) {
-  .project-number { font-size: 2.6rem; }
-  .project-title-row { align-items: baseline; gap: 14px; }
+  margin: 8px 0 18px;
 }
 
 .project-hero .tagline {
