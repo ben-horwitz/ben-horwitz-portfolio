@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=23">
+<link rel="stylesheet" href="../css/style.css?v=24">
 </head>
 <body>
 
@@ -48,7 +48,7 @@
 <div class="wrap">
   <a class="back-link" href="../index.html">&larr; All Projects</a>
 
-  <div class="project-hero">
+  <div class="project-hero project-hero--lead-image">
     <div class="project-hero-layout">
       <div>
         <p class="eyebrow">Assistive Design <span class="eyebrow-index">— 04 / 06</span></p>
@@ -77,22 +77,32 @@
   </div>
 
   <div class="story">
-    <div class="story-row">
-      <div class="story-text">
-        <p>
-          The goal was to help golfers with mobility issues — bad backs, bad
-          knees, arthritis — place a ball and tee into the ground without
-          bending or kneeling. A few similar products already exist, but
-          users consistently complain that they're hard to use, break
-          easily, and don't let you adjust tee height. We set out to fix all
-          three, and to place a ball and tee consistently across different
-          ground conditions.
-        </p>
-      </div>
+    <div class="story-text">
+      <p>
+        The goal was to help golfers with mobility issues (bad backs, bad
+        knees, arthritis) place a ball and tee into the ground without
+        bending or kneeling. A few similar products already exist, but
+        users consistently complain that they're hard to use, break
+        easily, and don't let you adjust tee height. I set out to fix all
+        three, and to place a ball and tee consistently across different
+        ground conditions.
+      </p>
+    </div>
+
+    <div class="story-media-pair">
       <figure class="story-media" data-lightbox="../assets/img/golf-ball-placer-cad.png"
               data-caption="CAD design of the ball and tee placer.">
         <img src="../assets/img/golf-ball-placer-cad.png" alt="Golf ball placer CAD model">
         <figcaption>Early CAD design</figcaption>
+      </figure>
+      <figure class="story-media" data-lightbox="../assets/video/golf-ball-placer-loading.mp4"
+              data-caption="Loading a ball and tee into the device.">
+        <video muted loop playsinline preload="none"
+               poster="../assets/img/posters/golf-ball-placer-loading-poster.jpg"
+               data-autoplay-preview>
+          <source src="../assets/video/golf-ball-placer-loading.mp4" type="video/mp4">
+        </video>
+        <figcaption>Loading a ball and tee before a placement cycle</figcaption>
       </figure>
     </div>
 
@@ -106,27 +116,13 @@
       </p>
     </div>
 
-    <div class="story-row">
-      <div class="story-text story-text--note">
-        <p>Loading a ball and tee into the device before a placement cycle.</p>
-      </div>
-      <figure class="story-media" data-lightbox="../assets/video/golf-ball-placer-loading.mp4"
-              data-caption="Loading a ball and tee into the device.">
-        <video muted loop playsinline preload="none"
-               poster="../assets/img/posters/golf-ball-placer-loading-poster.jpg"
-               data-autoplay-preview>
-          <source src="../assets/video/golf-ball-placer-loading.mp4" type="video/mp4">
-        </video>
-      </figure>
-    </div>
-
     <div class="story-text">
       <h3>Results</h3>
       <p>
-        The design consistently placed a ball and tee into the ground —
-        first-time users needed an average of just 1.8 tries to get it right,
-        and our fastest recorded placement was 5.26 seconds, well within how
-        long it normally takes to tee up by hand.
+        The design consistently placed a ball and tee into the ground.
+        First-time users needed an average of just 1.8 tries to get it
+        right, and our fastest recorded placement was 5.26 seconds, well
+        within how long it normally takes to tee up by hand.
       </p>
     </div>
 
