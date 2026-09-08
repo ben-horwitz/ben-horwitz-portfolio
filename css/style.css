@@ -919,6 +919,11 @@ h1, h2 {
 .fact-list { margin: 0; padding-left: 18px; }
 .fact-list li { margin-bottom: 3px; }
 .fact-list li:last-child { margin-bottom: 0; }
+.fact-list a {
+  border-bottom: 1px solid var(--border-soft);
+  transition: color 0.12s ease, border-color 0.12s ease;
+}
+.fact-list a:hover { color: var(--stamp); border-color: var(--stamp); }
 
 /* ---------- footer ---------- */
 
