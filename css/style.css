@@ -491,6 +491,22 @@ h1, h2 {
   .project-hero-layout { grid-template-columns: 1fr; gap: 28px; }
 }
 
+/* not every project earns the same treatment as the others — a couple
+   are carried by one strong object photo, and one is a small, quiet
+   piece rather than a flagship. Same grammar, different emphasis. */
+.project-hero--lead-image .project-hero-layout { grid-template-columns: 1.15fr 0.85fr; }
+.project-hero--lead-image .media-side { max-width: 420px; }
+.project-hero--lead-image .media-side video,
+.project-hero--lead-image .media-side img { max-height: 520px; }
+
+@media (max-width: 860px) {
+  .project-hero--lead-image .media-side { max-width: 320px; }
+}
+
+.project-hero--quiet .project-hero-layout { padding: 30px 0 46px; }
+.project-hero--quiet h1 { font-size: clamp(2rem, 4vw, 2.7rem); }
+.project-hero--quiet .tagline { font-size: 1.02rem; }
+
 .project-hero h1 {
   font-weight: 500;
   font-size: clamp(2.3rem, 5vw, 3.4rem);
