@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HV‑VPP Resin Printer — Ben Horwitz</title>
-<meta name="description" content="A scratch-built vat photopolymerization 3D printer with a PLC-driven UV/LCD masking system.">
+<meta name="description" content="A high-viscosity vat photopolymerization 3D printer — I wrote the full PLC controls framework and designed, machined, and assembled the mechanical system.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -30,39 +30,138 @@
   <div class="project-hero">
     <div class="project-hero-layout">
       <div>
-        <p class="eyebrow">3D Printing / Controls <span class="eyebrow-index">— 01 / 06</span></p>
+        <p class="eyebrow">Controls &amp; Mechanical Design <span class="eyebrow-index">— 01 / 06</span></p>
         <h1>HV‑VPP Resin Printer</h1>
         <p class="tagline">
-          A scratch-built vat photopolymerization (resin) 3D printer, with a
-          PLC-controlled UV/LCD masking system driving the cure and a precision
-          Z-axis and leveling setup underneath it.
+          A high-viscosity vat photopolymerization 3D printer, built over a
+          summer research position — I wrote the full PLC controls framework
+          from scratch and designed, machined, and assembled most of the
+          mechanical system.
         </p>
         <dl class="spec-row">
-          <div><dt>Process</dt><dd>Vat Photopolymerization</dd></div>
-          <div><dt>Controls</dt><dd>PLC</dd></div>
+          <div><dt>Lab</dt><dd>Digital Design &amp; Manufacturing Lab</dd></div>
+          <div><dt>Duration</dt><dd>Summer 2026</dd></div>
+          <div><dt>Role</dt><dd>Controls + Mechanical</dd></div>
         </dl>
       </div>
-      <div class="media-side" data-lightbox="../assets/gif/hv-vpp-tramming.gif"
-           data-caption="Tramming the build plate parallel to the resin vat.">
-        <img src="../assets/gif/hv-vpp-tramming.gif" alt="Tramming the printer build plate">
+      <div class="media-side" data-lightbox="../assets/img/hv-vpp-inside-machine.jpg"
+           data-caption="Inside the machine — Z-axis, build plate, and breadboard.">
+        <img src="../assets/img/hv-vpp-inside-machine.jpg" alt="Inside the HV-VPP printer">
       </div>
     </div>
   </div>
 
-  <!-- EDIT ME: this project isn't on your Wix site, so I don't have real story
-       details for it — everything below is my best guess from the file names
-       alone. "HV" is a placeholder guess (high-viscosity resin?). Replace with
-       the real story: what the acronym stands for, what resin/process it runs,
-       build volume, and what made this build hard. -->
   <div class="story">
+    <div class="story-text">
+      <p>
+        <strong>HV-VPP stands for high-viscosity vat photopolymerization</strong>
+        — a 3D printing process that cures liquid resin into solid layers
+        with UV light, masked through an LCD panel that acts as a different
+        stencil for every slice. Standard resin printers assume a thin,
+        free-flowing resin; this machine is built to handle much thicker,
+        higher-viscosity material instead, which changes almost everything
+        about how you have to recoat and level each layer.
+      </p>
+      <p>
+        I joined the lab's build of this printer from close to zero and left
+        with a working (if imperfect) machine. My part of it split into two
+        halves: writing the entire PLC controls framework that runs the
+        printer, and designing, machining, and assembling a large share of
+        the mechanical hardware itself — the Z-axis and build-plate mount,
+        the frame rigidization, the roller and servo couplers, and more.
+      </p>
+    </div>
+
     <div class="story-row">
       <div class="story-text">
+        <h3>Bringing The Controls Online</h3>
         <p>
-          <strong>What it does:</strong> the printer cures a photopolymer
-          resin layer by layer using a masked UV light source, projected
-          through an LCD panel that acts as a dynamic mask for each slice. A
-          PLC handles the timing and sequencing between the UV exposure, the
-          LCD mask, and Z-axis motion.
+          The printer runs on a Beckhoff PLC programmed in TwinCAT. Getting
+          there took a while: the Z-axis servo first got stuck refusing to
+          leave "ready for operation" over a wiring issue, and once it moved,
+          I had it running through the industrial controller as a
+          EtherCAT&nbsp;"slave" — still dependent on a separate host computer.
+          I reconfigured it to run as the "master" instead, so the controller
+          itself drives the Z-axis and every other motor and actuator
+          directly.
+        </p>
+        <p>
+          Scaling that up meant swapping bus terminals as the current draw
+          grew — an EL7031 stepper driver maxed out at 1.5&nbsp;A, so I moved
+          the steppers to an EL7041 rated for 5&nbsp;A, alongside an EK1100
+          EtherCAT coupler tying the whole bus together.
+        </p>
+      </div>
+      <figure class="story-media" data-lightbox="../assets/img/hv-vpp-plc.jpg"
+              data-caption="The Beckhoff PLC running the printer's full controls framework.">
+        <img src="../assets/img/hv-vpp-plc.jpg" alt="PLC controller">
+        <figcaption>The PLC, mid-wiring</figcaption>
+      </figure>
+    </div>
+
+    <figure class="story-media" data-lightbox="../assets/video/hv-vpp-z-axis-reliability.mp4"
+            data-caption="Testing Z-axis movement and repeatability once it was running through the PLC.">
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/hv-vpp-z-axis-reliability-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/hv-vpp-z-axis-reliability.mp4" type="video/mp4">
+      </video>
+      <figcaption>Z-axis, running under PLC control</figcaption>
+    </figure>
+
+    <div class="story-text">
+      <h3>Building The Mechanical System</h3>
+      <p>
+        On the hardware side, the printer's optical breadboard needed to be
+        rigidly tied to the frame instead of sitting on adjustable stands. I
+        designed a standoff to do that, ran an FEA pass on it (400&nbsp;lbf
+        total load, static and buckling), and iterated the manufacturing
+        method — CAD, then SLA-printed (which warped under UV), then finally
+        SLS nylon, machined afterward for flatness.
+      </p>
+      <p>
+        Elsewhere, I machined the servo and roller couplers out of 303
+        stainless — one bore had to come down to a 0.5005" interference fit
+        by hand on the lathe to actually clamp — and built the gauge blocks
+        used to align all the recoating rollers in-plane, with dovetails so
+        they could be pulled out for machine maintenance.
+      </p>
+    </div>
+
+    <div class="story-media-pair">
+      <figure class="story-media" data-lightbox="../assets/img/hv-vpp-nylon-parts.jpg"
+              data-caption="SLS-nylon standoffs, corner brackets, and light mount, printed after SLA warped under UV.">
+        <img src="../assets/img/hv-vpp-nylon-parts.jpg" alt="Nylon printed parts">
+        <figcaption>SLS nylon standoffs</figcaption>
+      </figure>
+      <figure class="story-media" data-lightbox="../assets/img/hv-vpp-parts.jpg"
+              data-caption="Machined couplers and hardware for the roller and servo drivetrain.">
+        <img src="../assets/img/hv-vpp-parts.jpg" alt="Machine parts">
+        <figcaption>Machined couplers</figcaption>
+      </figure>
+    </div>
+
+    <figure class="story-media" data-lightbox="../assets/video/hv-vpp-roller-moving.mp4"
+            data-caption="The recoating roller, aligned and moving resin back into place between layers.">
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/hv-vpp-roller-moving-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/hv-vpp-roller-moving.mp4" type="video/mp4">
+      </video>
+      <figcaption>Recoating roller</figcaption>
+    </figure>
+
+    <div class="story-row">
+      <div class="story-text">
+        <h3>UV &amp; LCD Masking</h3>
+        <p>
+          Each of the printer's UV power supplies dims over a 0–10V signal,
+          but the PLC output couldn't produce that range cleanly — an
+          existing dimmer would only drop to 1V, which the supplies read as
+          "auto on" and refused to turn off. Adding an EL4001 bus adapter let
+          the PLC drive the 0–10V line directly and fixed it for all ten
+          supplies at once. The LCD masking panels came up separately and are
+          now driving per-layer masks under TwinCAT.
         </p>
       </div>
       <figure class="story-media" data-lightbox="../assets/img/hv-vpp-lcd-mask.jpg"
@@ -73,7 +172,7 @@
     </div>
 
     <figure class="story-media" data-lightbox="../assets/video/hv-vpp-uv-light-controls.mp4"
-            data-caption="PLC-driven UV light controls.">
+            data-caption="PLC-driven UV light controls, after the EL4001 fix.">
       <video muted loop playsinline preload="none"
              poster="../assets/img/posters/hv-vpp-uv-light-controls-poster.jpg"
              data-autoplay-preview>
@@ -82,69 +181,42 @@
       <figcaption>UV light controls</figcaption>
     </figure>
 
-    <div class="story-text">
-      <h3>Getting It Reliable</h3>
-      <p>
-        Getting reliable prints meant tramming the build plate so it's
-        parallel to the resin vat within a tight tolerance, tuning the Z-axis
-        motion so layers separate cleanly from the FEP film, and validating
-        the roller and recoating system so resin flows back in evenly between
-        layers.
-      </p>
+    <div class="story-row story-row--reverse">
+      <figure class="story-media" data-lightbox="../assets/gif/hv-vpp-tramming.gif"
+              data-caption="Tramming the build plate parallel to the resin vat.">
+        <img src="../assets/gif/hv-vpp-tramming.gif" alt="Tramming the printer build plate">
+        <figcaption>Tramming the build plate</figcaption>
+      </figure>
+      <div class="story-text">
+        <h3>Tramming &amp; First Prints</h3>
+        <p>
+          Once the frame was rigidized, the build plate was still about 1°
+          out of plane with the breadboard, which measured flat to within
+          0.01–0.02° on its own. Shimming the standoffs closed that gap and
+          got the plate trammed to the vat.
+        </p>
+        <p>
+          On print day, at roughly 0.5mm layers and a 1-minute cure, we tried
+          about six times — every attempt failed at first-layer build-plate
+          adhesion. Honest state of it: it prints, but reliable adhesion is
+          still open future work, along with a proper load-distribution
+          plate and a Z-axis homing quirk in the PLC logic.
+        </p>
+      </div>
     </div>
 
-    <div class="story-media-pair">
-      <figure class="story-media" data-lightbox="../assets/video/hv-vpp-z-axis-reliability.mp4"
-              data-caption="Testing Z-axis movement and repeatability.">
-        <video muted loop playsinline preload="none"
-               poster="../assets/img/posters/hv-vpp-z-axis-reliability-poster.jpg"
-               data-autoplay-preview>
-          <source src="../assets/video/hv-vpp-z-axis-reliability.mp4" type="video/mp4">
-        </video>
-        <figcaption>Z-axis movement &amp; reliability</figcaption>
-      </figure>
-      <figure class="story-media" data-lightbox="../assets/video/hv-vpp-roller-moving.mp4"
-              data-caption="The recoating roller moving resin back into place between layers.">
-        <video muted loop playsinline preload="none"
-               poster="../assets/img/posters/hv-vpp-roller-moving-poster.jpg"
-               data-autoplay-preview>
-          <source src="../assets/video/hv-vpp-roller-moving.mp4" type="video/mp4">
-        </video>
-        <figcaption>Recoating roller</figcaption>
-      </figure>
-    </div>
+    <figure class="story-media" data-lightbox="../assets/img/hv-vpp-printer-outside.jpg"
+            data-caption="The finished machine.">
+      <img src="../assets/img/hv-vpp-printer-outside.jpg" alt="Printer, exterior view">
+      <figcaption>The finished machine</figcaption>
+    </figure>
 
     <div class="story-text">
-      <h3>The Machine</h3>
       <p>
-        The PLC and the printer's electronics sit alongside the frame — click
-        through for the controls, the inside, and the finished machine.
+        Built alongside Roxy Carbonell, Matt McCoy, and Keenan Vaughn, under
+        Dr.&nbsp;Seepersad at the Digital Design &amp; Manufacturing Lab.
       </p>
     </div>
-
-    <div class="story-slideshow">
-      <div class="slide active">
-        <img src="../assets/img/hv-vpp-plc.jpg" alt="PLC controller"
-             data-lightbox="../assets/img/hv-vpp-plc.jpg" data-caption="The PLC handling exposure and motion sequencing.">
-      </div>
-      <div class="slide">
-        <img src="../assets/img/hv-vpp-inside-machine.jpg" alt="Inside the printer"
-             data-lightbox="../assets/img/hv-vpp-inside-machine.jpg" data-caption="Inside the printer.">
-      </div>
-      <div class="slide">
-        <img src="../assets/img/hv-vpp-printer-outside.jpg" alt="Printer, exterior view"
-             data-lightbox="../assets/img/hv-vpp-printer-outside.jpg" data-caption="The full machine.">
-      </div>
-      <div class="slide">
-        <img src="../assets/img/hv-vpp-nylon-parts.jpg" alt="Nylon printed parts"
-             data-lightbox="../assets/img/hv-vpp-nylon-parts.jpg" data-caption="Nylon parts used in the build.">
-      </div>
-      <div class="slide">
-        <img src="../assets/img/hv-vpp-parts.jpg" alt="Machine parts"
-             data-lightbox="../assets/img/hv-vpp-parts.jpg" data-caption="Component parts of the machine.">
-      </div>
-    </div>
-    <p class="slideshow-caption">PLC &middot; inside the machine &middot; full machine &middot; nylon parts &middot; components</p>
   </div>
 
   <div class="project-nav">
