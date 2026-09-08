@@ -509,6 +509,16 @@ h1, h2 {
 .project-hero--quiet h1 { font-size: clamp(2rem, 4vw, 2.7rem); }
 .project-hero--quiet .tagline { font-size: 1.02rem; }
 
+/* the flagship — the biggest project in scope gets a title that
+   actually says so, instead of matching everything else's scale */
+.project-hero--flagship h1 { font-size: clamp(2.6rem, 5.8vw, 4rem); }
+.project-hero--flagship .project-hero-layout { padding-bottom: 34px; }
+
+/* brisk and process-driven rather than a considered showpiece — less
+   air before it gets to the point */
+.project-hero--compact .project-hero-layout { padding: 4px 0 22px; gap: 32px; }
+.project-hero--compact .tagline { margin-bottom: 14px; }
+
 .project-hero h1 {
   font-weight: 500;
   font-size: clamp(2.3rem, 5vw, 3.4rem);
@@ -539,6 +549,7 @@ h1, h2 {
 .spec-row div:not(:last-child)::after { content: "  /  "; color: var(--border-soft); }
 .spec-row dt { display: none; }
 .spec-row dd { display: inline; margin: 0; color: var(--text-muted); font-weight: 400; }
+.spec-row strong { color: var(--stamp); font-weight: 600; }
 
 .meta-row { display: none; }
 
