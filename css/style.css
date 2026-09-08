@@ -43,13 +43,27 @@ body {
      that visibly repeats as the page scrolls. */
   background-color: var(--bg);
   background-image:
-    radial-gradient(1100px 750px at 10% -8%, #f5f2e6 0%, rgba(245, 242, 230, 0) 55%),
-    radial-gradient(900px 650px at 96% 108%, #e6e1d0 0%, rgba(230, 225, 208, 0) 60%);
+    radial-gradient(1500px 950px at 15% -5%, #faf6e9 0%, rgba(250, 246, 233, 0) 72%),
+    radial-gradient(1200px 850px at 94% 108%, #ddd4b9 0%, rgba(221, 212, 185, 0) 72%);
   background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+}
+
+/* a faint paper grain over the whole page — the kind of texture a flat
+   gradient or a stock template never bothers with. Fixed and inert. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 img, video { max-width: 100%; display: block; }
@@ -381,7 +395,9 @@ h1, h2 {
 .card-media {
   position: relative;
   width: 168px;
-  aspect-ratio: 4 / 3;
+  /* every source photo/video for these cards is actually shot portrait —
+     4:3 landscape was cropping away well over half of each one */
+  aspect-ratio: 3 / 4;
   background: var(--bg-elevated);
   overflow: hidden;
   flex-shrink: 0;
@@ -747,6 +763,16 @@ h1, h2 {
 }
 
 .project-nav a:hover { color: var(--stamp); }
+
+.nav-hint {
+  max-width: 1020px;
+  margin: -14px auto 40px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--text-faint);
+}
 
 /* ---------- about page ---------- */
 

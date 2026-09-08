@@ -1,6 +1,29 @@
 // Ben Horwitz portfolio — shared behavior
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Keyboard project navigation — left/right arrows step to the
+  // previous/next project on a project detail page, same as clicking
+  // the prev/next links at the bottom. Skipped while typing anywhere
+  // or while the lightbox is open (it has its own arrow handling).
+  const projectNav = document.querySelector('.project-nav');
+  if (projectNav) {
+    const prevLink = projectNav.querySelector('a:first-child');
+    const nextLink = projectNav.querySelector('a:last-child');
+    document.addEventListener('keydown', (e) => {
+      const tag = (e.target.tagName || '').toLowerCase();
+      if (tag === 'input' || tag === 'textarea') return;
+      if (document.querySelector('.lightbox.open')) return;
+      if (e.key === 'ArrowLeft' && prevLink) window.location.href = prevLink.href;
+      if (e.key === 'ArrowRight' && nextLink) window.location.href = nextLink.href;
+    });
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      const hint = document.createElement('p');
+      hint.className = 'nav-hint';
+      hint.textContent = 'or use ← →';
+      projectNav.insertAdjacentElement('afterend', hint);
+    }
+  }
+
   // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const links = document.querySelector('.nav-links');
