@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Custom Machined Putter — Ben Horwitz</title>
 <meta name="description" content="A golf putter designed in CAD/CAM and machined from raw stock.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -25,42 +28,44 @@
   <a class="back-link" href="../index.html">&larr; All projects</a>
 
   <div class="project-hero">
-    <p class="eyebrow">CAD / CAM / Machining</p>
-    <h1>Custom Machined Putter</h1>
-    <p class="tagline">
-      A golf putter modeled in CAD, programmed for CNC machining, and cut from
-      solid stock into a finished, playable head.
-    </p>
-    <div class="meta-row">
-      <span class="tag">CAD</span>
-      <span class="tag">CAM</span>
-      <span class="tag">CNC Milling</span>
+    <div class="project-hero-layout">
+      <div>
+        <p class="eyebrow">CAD / CAM / Machining</p>
+        <h1>Custom Machined Putter</h1>
+        <p class="tagline">
+          A golf putter modeled in CAD, programmed for CNC machining, and cut from
+          solid stock into a finished, playable head.
+        </p>
+        <div class="meta-row">
+          <span class="tag">CAD</span>
+          <span class="tag">CAM</span>
+          <span class="tag">CNC Milling</span>
+        </div>
+        <div class="prose">
+          <!-- EDIT ME: draft copy below — swap in the real design goals, software used
+               (e.g. SolidWorks/Fusion 360), material, and any specifics on the toolpath
+               or setup that made this project interesting. -->
+          <p>
+            <strong>The goal</strong> was to take a putter from a full CAD model
+            through to a finished, machined part — face milling, weighting, and all
+            the small geometry that affects feel and roll, not just the CAD render.
+          </p>
+          <p>
+            The head was modeled first, then programmed in CAM to generate toolpaths
+            for the mill. Getting the face flat and the alignment features accurate
+            took a few passes of fixturing and cut planning before the final part
+            came off the machine.
+          </p>
+        </div>
+      </div>
+      <div class="media-side">
+        <video controls playsinline preload="none"
+               poster="../assets/img/posters/putter-head-on-poster.jpg"
+               data-click-to-play>
+          <source src="../assets/video/putter-head-on.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
-  </div>
-
-  <div class="media-hero">
-    <video controls playsinline preload="none"
-           poster="../assets/img/posters/putter-head-on-poster.jpg"
-           data-click-to-play>
-      <source src="../assets/video/putter-head-on.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="prose">
-    <!-- EDIT ME: draft copy below — swap in the real design goals, software used
-         (e.g. SolidWorks/Fusion 360), material, and any specifics on the toolpath
-         or setup that made this project interesting. -->
-    <p>
-      <strong>The goal</strong> was to take a putter from a full CAD model
-      through to a finished, machined part — face milling, weighting, and all
-      the small geometry that affects feel and roll, not just the CAD render.
-    </p>
-    <p>
-      The head was modeled first, then programmed in CAM to generate toolpaths
-      for the mill. Getting the face flat and the alignment features accurate
-      took a few passes of fixturing and cut planning before the final part
-      came off the machine.
-    </p>
   </div>
 
   <div class="media-grid">

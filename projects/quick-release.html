@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Quick-Release Mechanism — Ben Horwitz</title>
 <meta name="description" content="A tool-free quick-release latch, designed as a CAD assembly and built/tested.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -25,40 +28,42 @@
   <a class="back-link" href="../index.html">&larr; All projects</a>
 
   <div class="project-hero">
-    <p class="eyebrow">Mechanism Design</p>
-    <h1>Quick-Release Mechanism</h1>
-    <p class="tagline">
-      A tool-free quick-release latch, modeled as a full CAD assembly and then
-      built and tested for repeated one-handed engage/disengage cycles.
-    </p>
-    <div class="meta-row">
-      <span class="tag">CAD Assembly</span>
-      <span class="tag">Mechanism Design</span>
+    <div class="project-hero-layout">
+      <div>
+        <p class="eyebrow">Mechanism Design</p>
+        <h1>Quick-Release Mechanism</h1>
+        <p class="tagline">
+          A tool-free quick-release latch, modeled as a full CAD assembly and then
+          built and tested for repeated one-handed engage/disengage cycles.
+        </p>
+        <div class="meta-row">
+          <span class="tag">CAD Assembly</span>
+          <span class="tag">Mechanism Design</span>
+        </div>
+        <div class="prose">
+          <!-- EDIT ME: describe what this quick-release actually attaches/secures,
+               the load case it needs to hold, and how the latch geometry works. -->
+          <p>
+            <strong>The goal</strong> was a latch that locks securely under load but
+            releases instantly with one motion — no tools, no fumbling. The full
+            mechanism was modeled and animated as a CAD assembly first to check
+            clearances and range of motion before any parts were cut.
+          </p>
+          <p>
+            Once built, it was tested through repeated attach/release cycles to make
+            sure the lid seats consistently and the latch doesn't walk loose over
+            time.
+          </p>
+        </div>
+      </div>
+      <div class="media-side">
+        <video controls playsinline preload="none"
+               poster="../assets/img/posters/quick-release-in-action-poster.jpg"
+               data-click-to-play>
+          <source src="../assets/video/quick-release-in-action.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
-  </div>
-
-  <div class="media-hero">
-    <video controls playsinline preload="none"
-           poster="../assets/img/posters/quick-release-in-action-poster.jpg"
-           data-click-to-play>
-      <source src="../assets/video/quick-release-in-action.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <div class="prose">
-    <!-- EDIT ME: describe what this quick-release actually attaches/secures,
-         the load case it needs to hold, and how the latch geometry works. -->
-    <p>
-      <strong>The goal</strong> was a latch that locks securely under load but
-      releases instantly with one motion — no tools, no fumbling. The full
-      mechanism was modeled and animated as a CAD assembly first to check
-      clearances and range of motion before any parts were cut.
-    </p>
-    <p>
-      Once built, it was tested through repeated attach/release cycles to make
-      sure the lid seats consistently and the latch doesn't walk loose over
-      time.
-    </p>
   </div>
 
   <div class="media-grid">
