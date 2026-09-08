@@ -447,6 +447,7 @@ h1, h2 {
   gap: 40px;
   align-items: start;
   padding: 12px 0 30px;
+  max-width: 900px;
 }
 
 @media (max-width: 860px) {
@@ -730,7 +731,7 @@ h1, h2 {
   text-transform: uppercase;
   letter-spacing: 0.02em;
   color: var(--text-faint);
-  max-width: none;
+  max-width: 900px;
 }
 
 .project-nav a:hover { color: var(--stamp); }
