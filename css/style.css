@@ -115,9 +115,8 @@ h1, h2 {
 .brand {
   font-size: 1.15rem;
   white-space: nowrap;
+  color: var(--stamp);
 }
-
-.brand span { color: var(--stamp); }
 
 .nav-links {
   display: flex;
@@ -328,7 +327,7 @@ h1, h2 {
 .eyebrow-index { color: var(--stamp); }
 
 .hero-links a { color: var(--text-muted); }
-.hero-links a:hover { color: var(--accent); }
+.hero-links a:hover { color: var(--stamp); }
 .hero-links a.primary { color: var(--text); font-weight: 600; }
 .hero-links a.primary:hover { color: var(--stamp); }
 
@@ -340,7 +339,7 @@ h1, h2 {
   padding-bottom: 1px;
 }
 
-.btn:hover { color: var(--accent); border-color: var(--accent); }
+.btn:hover { color: var(--stamp); border-color: var(--stamp); }
 
 .btn.primary { color: var(--text); font-weight: 600; border-color: var(--text); }
 .btn.primary:hover { color: var(--stamp); border-color: var(--stamp); }
@@ -472,7 +471,7 @@ h1, h2 {
   margin: 28px 0 0;
 }
 
-.back-link:hover { color: var(--accent); }
+.back-link:hover { color: var(--stamp); }
 
 .project-hero { padding: 20px 0 0; }
 
@@ -900,7 +899,7 @@ h1, h2 {
 }
 
 .footer-links { display: flex; gap: 18px; }
-.footer-links a:hover { color: var(--accent); }
+.footer-links a:hover { color: var(--stamp); }
 
 /* ---------- lightbox ---------- */
 
