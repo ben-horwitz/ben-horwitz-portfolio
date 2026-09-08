@@ -539,9 +539,13 @@ h1, h2 {
 .prose ul { margin: 0 0 14px; padding-left: 20px; }
 .prose li { margin-bottom: 5px; }
 
-/* ---------- story : text and photos in reading order, no card frames ---------- */
+/* ---------- story : text and photos in reading order, no card frames ----------
+   Text keeps a comfortable reading measure (set per-element below), but the
+   column itself isn't clamped — that's what lets a .wide photo actually
+   break out and use the page, instead of every image being stuck inside
+   the same narrow text width regardless of what it is. */
 
-.story { padding: 4px 0 50px; max-width: 62ch; }
+.story { padding: 4px 0 50px; }
 
 .story-text { max-width: 62ch; color: var(--text-muted); font-size: 1.03rem; }
 .story-text h3 {
@@ -561,7 +565,7 @@ h1, h2 {
    a plain italic caption instead of a boxed label */
 .story-media {
   width: fit-content;
-  max-width: 100%;
+  max-width: 680px;
   margin: 32px 0;
   background: var(--bg-elevated);
   cursor: zoom-in;
@@ -578,9 +582,24 @@ h1, h2 {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 420px;
+  max-height: 480px;
   object-fit: contain;
   display: block;
+}
+
+/* a tall portrait shot that's the point of its own beat (a closing
+   photo, not a supporting one) — let it run taller instead of getting
+   capped down to the same height as everything else */
+.story-media.tall img, .story-media.tall video { max-height: 620px; }
+
+/* the one shot per project that earns the whole page's width — a
+   landscape "reveal" photo that breaks past the reading column instead
+   of being squeezed down to the same size as everything else */
+.story-media.wide { max-width: 900px; width: 100%; }
+.story-media.wide img, .story-media.wide video {
+  width: 100%;
+  height: auto;
+  max-height: none;
 }
 
 .story-media figcaption {
@@ -594,40 +613,50 @@ h1, h2 {
   box-shadow: none;
 }
 
-/* two photos side by side — the one place a pair genuinely reads
-   better together than stacked */
+/* two or three photos side by side — for shots that actually belong
+   together (different angles of the same part, a before/after) rather
+   than stacked one after another with nothing to say why */
 .story-media-pair {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
   margin: 32px 0;
   align-items: flex-end;
+  max-width: 680px;
 }
 
 .story-media-pair .story-media { margin: 0; transform: none !important; }
-.story-media-pair .story-media img, .story-media-pair .story-media video { max-height: 260px; }
+.story-media-pair .story-media img, .story-media-pair .story-media video { max-height: 300px; }
 
-/* a wide photo that breaks the column — used sparingly, for the shot
-   that actually needs the room */
-.story-media.wide {
-  max-width: none;
-  width: 100%;
-}
-.story-media.wide img, .story-media.wide video { max-height: 480px; width: 100%; object-fit: cover; }
-
-/* a text + photo row — the photo stays compact, off to one side */
+/* a text + photo row — the photo stays compact, off to one side, and
+   sits centered in its column instead of jammed against one edge when
+   it's a narrow portrait shot */
 .story-row {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 1fr 280px;
   gap: 30px;
   align-items: center;
   margin: 38px 0;
+  max-width: 680px;
 }
 
-.story-row .story-media { margin: 0; }
-.story-row .story-media img, .story-row .story-media video { max-height: 280px; }
-.story-row.story-row--reverse { grid-template-columns: 260px 1fr; }
+.story-row .story-media { margin: 0; justify-self: center; }
+.story-row .story-media img, .story-row .story-media video { max-height: 300px; }
+.story-row.story-row--reverse { grid-template-columns: 280px 1fr; }
 .story-row.story-row--reverse .story-media { order: -1; }
+
+/* a short, larger-set italic line standing in for a paragraph — used
+   next to a video/photo that's the whole point of its own beat, so the
+   space beside it reads as a caption, not a gap */
+.story-text--note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  max-width: 34ch;
+}
 
 @media (max-width: 700px) {
   .story-row, .story-row.story-row--reverse { grid-template-columns: 1fr; }
