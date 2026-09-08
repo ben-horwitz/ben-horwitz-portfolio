@@ -7,7 +7,7 @@
 <meta name="description" content="140 precision parts across 10 quick-release harperizer lids, machined during a manufacturing internship at Mechanical Advantage, LLC.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -42,38 +42,6 @@
           <div><dt>Date</dt><dd>Summer 2024</dd></div>
           <div><dt>Material</dt><dd>1018 Low Carbon Steel</dd></div>
         </dl>
-        <div class="prose">
-          <p>
-            I fabricated 10 quick-release harperizer lids with three other
-            interns at Mechanical Advantage. The company runs two harperizers
-            daily to finish metal parts for the biomedical industry, and their
-            store-bought lids were slow — 1 to 2 minutes each to put on and
-            take off, multiple times a day.
-          </p>
-          <p>
-            Each new lid contained 14 custom, precision-machined metal parts.
-            Across 10 lids, that's 140 functional parts that had to be
-            designed, programmed, and cut before anything could be assembled.
-          </p>
-          <h3>The bottleneck</h3>
-          <p>
-            The part that mattered most was the interaction between the claws
-            and the machine itself. The claws were machined from 1018 low
-            carbon steel — a metal that's genuinely difficult to cut cleanly —
-            and each one took about 2 hours on the mill. At 4 claws per lid
-            across 10 lids, that penciled out to over 80 hours of machining
-            time on claws alone.
-          </p>
-          <h3>Automating the reload</h3>
-          <p>
-            To claw back that time (sorry), I designed a "bar-pull" mechanism
-            that automatically pulled fresh stock material out through the
-            4th axis between cycles. That meant the mill no longer needed
-            someone standing over it to reload between parts — it could run
-            unattended overnight, turning out a full set of 4 claws in
-            8-hour chunks.
-          </p>
-        </div>
       </div>
       <div class="media-side" data-lightbox="../assets/video/quick-release-in-action.mp4"
            data-caption="The quick-release harperizer lid in action.">
@@ -86,35 +54,79 @@
     </div>
   </div>
 
-  <div class="media-grid">
-    <figure>
-      <video muted loop playsinline preload="none"
-             poster="../assets/img/posters/quick-release-cad-assembly-poster.jpg"
-             data-autoplay-preview
-             data-lightbox="../assets/video/quick-release-cad-assembly.mp4" data-caption="Fusion 360 animation of the quick-release lid's CAD assembly.">
-        <source src="../assets/video/quick-release-cad-assembly.mp4" type="video/mp4">
-      </video>
-      <figcaption>CAD assembly</figcaption>
+  <div class="story">
+    <div class="story-text">
+      <p>
+        I fabricated 10 quick-release harperizer lids with three other interns
+        at Mechanical Advantage. The company runs two harperizers daily to
+        finish metal parts for the biomedical industry, and their store-bought
+        lids were slow — 1 to 2 minutes each to put on and take off, multiple
+        times a day.
+      </p>
+    </div>
+
+    <figure class="story-media" data-lightbox="../assets/img/quick-release-lid-attached.jpg"
+            data-caption="A finished lid, inserted into the harperizer.">
+      <img src="../assets/img/quick-release-lid-attached.jpg" alt="Lid attached via quick-release">
+      <figcaption>A finished lid, inserted into the harperizer</figcaption>
     </figure>
-    <figure>
+
+    <div class="story-text">
+      <p>
+        Each new lid contained 14 custom, precision-machined metal parts.
+        Across 10 lids, that's 140 functional parts that had to be designed,
+        programmed, and cut before anything could be assembled.
+      </p>
+    </div>
+
+    <div class="story-media-pair">
+      <figure class="story-media" data-lightbox="../assets/img/quick-release-parts.jpg"
+              data-caption="A subset of the 140 machined parts across all 10 lids.">
+        <img src="../assets/img/quick-release-parts.jpg" alt="Quick-release parts">
+        <figcaption>Machined components</figcaption>
+      </figure>
+      <figure class="story-media" data-lightbox="../assets/video/quick-release-cad-assembly.mp4"
+              data-caption="Fusion 360 animation of the quick-release lid's CAD assembly.">
+        <video muted loop playsinline preload="none"
+               poster="../assets/img/posters/quick-release-cad-assembly-poster.jpg"
+               data-autoplay-preview>
+          <source src="../assets/video/quick-release-cad-assembly.mp4" type="video/mp4">
+        </video>
+        <figcaption>CAD assembly</figcaption>
+      </figure>
+    </div>
+
+    <div class="story-text">
+      <h3>The Bottleneck</h3>
+      <p>
+        The part that mattered most was the interaction between the claws and
+        the machine itself. The claws were machined from 1018 low carbon steel
+        — a metal that's genuinely difficult to cut cleanly — and each one
+        took about 2 hours on the mill. At 4 claws per lid across 10 lids,
+        that penciled out to over 80 hours of machining time on claws alone.
+      </p>
+    </div>
+
+    <figure class="story-media" data-lightbox="../assets/video/quick-release-action.mp4"
+            data-caption="The claw-and-lid release mechanism cycling.">
       <video muted loop playsinline preload="none"
              poster="../assets/img/posters/quick-release-action-poster.jpg"
-             data-autoplay-preview
-             data-lightbox="../assets/video/quick-release-action.mp4" data-caption="The claw-and-lid release mechanism cycling.">
+             data-autoplay-preview>
         <source src="../assets/video/quick-release-action.mp4" type="video/mp4">
       </video>
-      <figcaption>Latch in action</figcaption>
+      <figcaption>The release mechanism, cycling</figcaption>
     </figure>
-    <figure>
-      <img src="../assets/img/quick-release-lid-attached.jpg" alt="Lid attached via quick-release"
-           data-lightbox="../assets/img/quick-release-lid-attached.jpg" data-caption="A finished lid, inserted into the harperizer.">
-      <figcaption>Lid inserted in harperizer</figcaption>
-    </figure>
-    <figure>
-      <img src="../assets/img/quick-release-parts.jpg" alt="Quick-release parts"
-           data-lightbox="../assets/img/quick-release-parts.jpg" data-caption="A subset of the 140 machined parts across all 10 lids.">
-      <figcaption>Machined components</figcaption>
-    </figure>
+
+    <div class="story-text">
+      <h3>Automating The Reload</h3>
+      <p>
+        To claw back that time (sorry), I designed a "bar-pull" mechanism that
+        automatically pulled fresh stock material out through the 4th axis
+        between cycles. That meant the mill no longer needed someone standing
+        over it to reload between parts — it could run unattended overnight,
+        turning out a full set of 4 claws in 8-hour chunks.
+      </p>
+    </div>
   </div>
 
   <div class="project-nav">

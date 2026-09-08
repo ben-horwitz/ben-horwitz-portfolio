@@ -17,7 +17,7 @@
   --max-width: 1160px;
   --radius: 3px;
   --radius-md: 6px;
-  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
 }
@@ -42,8 +42,10 @@ img, video { max-width: 100%; display: block; }
 
 a { color: inherit; text-decoration: none; }
 
-h1, h2, h3, .brand, .btn, .card-body h3 {
+h1, h2, .brand, .card-body h3 {
   font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-weight: 600;
 }
 
 .wrap {
@@ -413,18 +415,88 @@ h1, h2, h3, .brand, .btn, .card-body h3 {
   cursor: zoom-in;
 }
 
-.media-side video, .media-side img { width: 100%; display: block; }
+.media-side video, .media-side img {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: cover;
+  display: block;
+}
 
 @media (max-width: 860px) {
   .media-side { position: static; order: -1; }
 }
 
 .prose { max-width: 62ch; color: var(--text-muted); font-size: 1.02rem; }
-.prose h3 { font-size: 1.05rem; color: var(--text); margin: 32px 0 12px; }
+.prose h3 {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-bright);
+  margin: 32px 0 14px;
+}
 .prose p { margin: 0 0 18px; }
 .prose strong { color: var(--text); }
 .prose ul { margin: 0 0 18px; padding-left: 20px; }
 .prose li { margin-bottom: 6px; }
+
+/* ---------- story : text and media interleaved, in narrative order ---------- */
+
+.story { padding: 8px 0 90px; }
+
+.story-text { max-width: 62ch; color: var(--text-muted); font-size: 1.04rem; }
+.story-text h3 {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-bright);
+  margin: 0 0 14px;
+}
+.story-text p { margin: 0 0 18px; }
+.story-text strong { color: var(--text); }
+.story-text + .story-text { margin-top: -6px; }
+
+.story-media {
+  margin: 40px 0;
+  border: 1px solid var(--border-soft);
+  background: #000;
+  cursor: zoom-in;
+  transition: border-color 0.15s ease;
+}
+
+.story-media:hover { border-color: var(--accent); }
+
+.story-media img, .story-media video {
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+  background: #000;
+  display: block;
+  margin: 0 auto;
+}
+
+.story-media figcaption {
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-soft);
+}
+
+.story-media-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.story-media-pair .story-media { margin: 0; }
+.story-media-pair .story-media img, .story-media-pair .story-media video { max-height: 440px; }
+
+@media (max-width: 640px) {
+  .story-media-pair { grid-template-columns: 1fr; }
+}
 
 .editor-note {
   margin: 18px 0 0;
@@ -437,38 +509,6 @@ h1, h2, h3, .brand, .btn, .card-body h3 {
 }
 
 .editor-note strong { color: var(--accent-bright); }
-
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
-  margin: 8px 0 90px;
-}
-
-.media-grid figure {
-  margin: 0;
-  border: 1px solid var(--border-soft);
-  overflow: hidden;
-  background: #000;
-  cursor: zoom-in;
-  transition: border-color 0.15s ease, transform 0.2s ease;
-}
-
-.media-grid figure:hover { border-color: var(--accent); transform: translateY(-2px); }
-
-.media-grid img, .media-grid video {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-.media-grid figcaption {
-  padding: 10px 14px;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-soft);
-}
 
 .project-nav {
   display: flex;
@@ -519,6 +559,8 @@ h1, h2, h3, .brand, .btn, .card-body h3 {
   background: #000;
   cursor: zoom-in;
 }
+
+.about-video video { width: 100%; max-height: 460px; object-fit: cover; }
 
 .fact-sheet {
   margin: 28px 0;

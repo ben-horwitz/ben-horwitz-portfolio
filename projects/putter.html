@@ -7,7 +7,7 @@
 <meta name="description" content="A blade-style golf putter in 303 stainless steel, milled on a 4th axis at Middlebury College.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -42,35 +42,6 @@
           <div><dt>Date</dt><dd>Spring 2024</dd></div>
           <div><dt>Material</dt><dd>303 Stainless Steel</dd></div>
         </dl>
-        <div class="prose">
-          <p>
-            Once I got proficient in CAD and milling, I wanted to design and
-            fabricate something I actually cared about using. I've always been
-            into golf, so a putter was the obvious test of how far my
-            machining and engineering skills had come.
-          </p>
-          <p>
-            Putters live or die on three things — shape, feel, and forgiveness
-            — and shape was my starting point. I actually designed a mallet
-            putter first, but ended up going with a thinner blade instead,
-            modeled after putters like the Scotty Cameron Newport 2 and Ping
-            Anser.
-          </p>
-          <h3>Machining it</h3>
-          <p>
-            Most production putters are cast, or milled on a 5th axis. I
-            didn't have that luxury, so I designed mine to be milled on a
-            4th axis instead, with the hosel machined separately and attached
-            after the head was finished.
-          </p>
-          <h3>What's next</h3>
-          <p>
-            This first version taught me a lot, and I'm already working on a
-            second — a completely different design aimed at better forgiveness
-            and feel. I'm also planning to chemically stain the 303 stainless,
-            which should give the head a blue hue.
-          </p>
-        </div>
       </div>
       <div class="media-side" data-lightbox="../assets/video/putter-head-on.mp4"
            data-caption="The finished putter head, milled from 303 stainless steel.">
@@ -83,36 +54,77 @@
     </div>
   </div>
 
-  <div class="media-grid">
-    <figure>
-      <img src="../assets/img/putter-cad.png" alt="Putter CAD model"
-           data-lightbox="../assets/img/putter-cad.png" data-caption="CAD model of the blade putter head.">
-      <figcaption>CAD model</figcaption>
+  <div class="story">
+    <div class="story-text">
+      <p>
+        Once I got proficient in CAD and milling, I wanted to design and
+        fabricate something I actually cared about using. I've always been
+        into golf, so a putter was the obvious test of how far my machining
+        and engineering skills had come.
+      </p>
+      <p>
+        Putters live or die on three things — shape, feel, and forgiveness —
+        and shape was my starting point. I actually designed a mallet putter
+        first, but ended up going with a thinner blade instead, modeled after
+        putters like the Scotty Cameron Newport 2 and Ping Anser.
+      </p>
+    </div>
+
+    <figure class="story-media" data-lightbox="../assets/img/putter-cad.png"
+            data-caption="CAD model of the blade putter head.">
+      <img src="../assets/img/putter-cad.png" alt="Putter CAD model">
+      <figcaption>The blade design that won out over the mallet.</figcaption>
     </figure>
-    <figure>
-      <img src="../assets/img/putter-cam.png" alt="Putter CAM toolpaths"
-           data-lightbox="../assets/img/putter-cam.png" data-caption="CAM toolpaths for milling the head on a 4th axis.">
-      <figcaption>4th-axis CAM toolpaths</figcaption>
-    </figure>
-    <figure>
-      <video muted loop playsinline preload="none"
-             poster="../assets/img/posters/putter-side-view-poster.jpg"
-             data-autoplay-preview
-             data-lightbox="../assets/video/putter-side-view.mp4" data-caption="Side profile of the finished putter head.">
-        <source src="../assets/video/putter-side-view.mp4" type="video/mp4">
-      </video>
-      <figcaption>Side profile</figcaption>
-    </figure>
-    <figure>
-      <img src="../assets/img/putter-face.jpg" alt="Putter face, milled finish"
-           data-lightbox="../assets/img/putter-face.jpg" data-caption="The milled putter face.">
-      <figcaption>Milled face</figcaption>
-    </figure>
-    <figure>
-      <img src="../assets/img/putter-back.jpg" alt="Putter back"
-           data-lightbox="../assets/img/putter-back.jpg" data-caption="Back of the putter head.">
-      <figcaption>Back of head</figcaption>
-    </figure>
+
+    <div class="story-text">
+      <h3>Machining It</h3>
+      <p>
+        Most production putters are cast, or milled on a 5th axis. I didn't
+        have that luxury, so I designed mine to be milled on a 4th axis
+        instead, with the hosel machined separately and attached after the
+        head was finished.
+      </p>
+    </div>
+
+    <div class="story-media-pair">
+      <figure class="story-media" data-lightbox="../assets/img/putter-cam.png"
+              data-caption="CAM toolpaths for milling the head on a 4th axis.">
+        <img src="../assets/img/putter-cam.png" alt="Putter CAM toolpaths">
+        <figcaption>4th-axis CAM toolpaths</figcaption>
+      </figure>
+      <figure class="story-media" data-lightbox="../assets/video/putter-side-view.mp4"
+              data-caption="Side profile of the finished putter head.">
+        <video muted loop playsinline preload="none"
+               poster="../assets/img/posters/putter-side-view-poster.jpg"
+               data-autoplay-preview>
+          <source src="../assets/video/putter-side-view.mp4" type="video/mp4">
+        </video>
+        <figcaption>Side profile, finished head</figcaption>
+      </figure>
+    </div>
+
+    <div class="story-text">
+      <h3>What's Next</h3>
+      <p>
+        This first version taught me a lot, and I'm already working on a
+        second — a completely different design aimed at better forgiveness
+        and feel. I'm also planning to chemically stain the 303 stainless,
+        which should give the head a blue hue.
+      </p>
+    </div>
+
+    <div class="story-media-pair">
+      <figure class="story-media" data-lightbox="../assets/img/putter-face.jpg"
+              data-caption="The milled putter face.">
+        <img src="../assets/img/putter-face.jpg" alt="Putter face, milled finish">
+        <figcaption>Milled face</figcaption>
+      </figure>
+      <figure class="story-media" data-lightbox="../assets/img/putter-back.jpg"
+              data-caption="Back of the putter head.">
+        <img src="../assets/img/putter-back.jpg" alt="Putter back">
+        <figcaption>Back of head</figcaption>
+      </figure>
+    </div>
   </div>
 
   <div class="project-nav">
