@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=19">
+<link rel="stylesheet" href="../css/style.css?v=20">
 </head>
 <body>
 
@@ -56,8 +56,9 @@
         <p class="tagline">
           A high-viscosity vat photopolymerization 3D printer, built over a
           summer research position — I wrote the full PLC controls framework
-          from scratch and designed, machined, and assembled most of the
-          mechanical system.
+          from scratch and designed, machined, and assembled the printer,
+          eventually enabling it to print multilayer, high-viscosity
+          silicone parts.
         </p>
         <dl class="spec-row">
           <div><dt>Lab</dt><dd>Digital Design &amp; Manufacturing Lab</dd></div>
@@ -76,20 +77,20 @@
     <div class="story-text">
       <p>
         <strong>HV-VPP stands for high-viscosity vat photopolymerization</strong>
-        — a 3D printing process that cures liquid resin into solid layers
-        with UV light, masked through an LCD panel that acts as a different
-        stencil for every slice. Standard resin printers assume a thin,
-        free-flowing resin; this machine is built to handle much thicker,
-        higher-viscosity material instead, which changes almost everything
-        about how you have to recoat and level each layer.
+        — a 3D printing process that cures liquid resin with UV light,
+        masked through an LCD panel that acts as a "stencil" for every
+        slice. Standard resin printers assume a thin, free-flowing resin;
+        this machine is built to handle much thicker, higher-viscosity
+        material instead, which changes almost everything about how you
+        have to recoat and level each layer.
       </p>
       <p>
         I joined the lab's build of this printer from close to zero and left
-        with a working (if imperfect) machine. My part of it split into two
-        halves: writing the entire PLC controls framework that runs the
+        with a working machine. My part of it split into two halves: specing
+        and configuring the entire PLC control framework that runs the
         printer, and designing, machining, and assembling a large share of
         the mechanical hardware itself — the Z-axis and build-plate mount,
-        the frame rigidization, the roller and servo couplers, and more.
+        the machine's rigidization, the roller and servo couplers, and more.
       </p>
     </div>
 
@@ -122,10 +123,11 @@
 
     <div class="story-row story-row--reverse">
       <figure class="story-media" data-lightbox="../assets/video/hv-vpp-z-axis-reliability.mp4"
-              data-caption="Testing Z-axis movement and repeatability once it was running through the PLC.">
+              data-caption="Testing Z-axis movement and repeatability once it was running through the PLC."
+              data-playback-rate="2">
         <video muted loop playsinline preload="none"
                poster="../assets/img/posters/hv-vpp-z-axis-reliability-poster.jpg"
-               data-autoplay-preview>
+               data-autoplay-preview data-playback-rate="2">
           <source src="../assets/video/hv-vpp-z-axis-reliability.mp4" type="video/mp4">
         </video>
       </figure>
@@ -138,11 +140,11 @@
       <h3>Building The Mechanical System</h3>
       <p>
         On the hardware side, the printer's optical breadboard needed to be
-        rigidly tied to the frame instead of sitting on adjustable stands. I
+        rigid to the frame instead of sitting on adjustable stands. I
         designed a standoff to do that, ran an FEA pass on it (400&nbsp;lbf
-        total load, static and buckling), and iterated the manufacturing
-        method — CAD, then SLA-printed (which warped under UV), then finally
-        SLS nylon, machined afterward for flatness.
+        total load, static and buckling), and manufacturing; first
+        SLA-printed (which warped under UV), then finally SLS nylon, machined
+        afterward for flatness.
       </p>
       <p>
         Elsewhere, I machined the servo and roller couplers out of 303
@@ -175,13 +177,11 @@
       <div class="story-text">
         <h3>UV &amp; LCD Masking</h3>
         <p>
-          Each of the printer's UV power supplies dims over a 0–10V signal,
-          but the PLC output couldn't produce that range cleanly — an
-          existing dimmer would only drop to 1V, which the supplies read as
-          "auto on" and refused to turn off. Adding an EL4001 bus adapter let
-          the PLC drive the 0–10V line directly and fixed it for all ten
-          supplies at once. The LCD masking panels came up separately and are
-          now driving per-layer masks under TwinCAT.
+          Each of the printer's UV power supplies dims over a 0–10V signal.
+          Adding an EL4001 bus adapter let the PLC drive the 0–10V line
+          directly and fixed it for all ten supplies at once. The LCD
+          masking panels came up separately and are now driving per-layer
+          masks under a python slicer.
         </p>
       </div>
       <figure class="story-media" data-lightbox="../assets/img/hv-vpp-lcd-mask.jpg"
@@ -220,11 +220,12 @@
           got the plate trammed to the vat.
         </p>
         <p>
-          On print day, at roughly 0.5mm layers and a 1-minute cure, we tried
-          about six times — every attempt failed at first-layer build-plate
-          adhesion. Honest state of it: it prints, but reliable adhesion is
-          still open future work, along with a proper load-distribution
-          plate and a Z-axis homing quirk in the PLC logic.
+          On print day, at roughly 0.5mm layers and a 1-minute cure, we were
+          able to print three layers, measuring the final part width to be
+          almost precisely 1.5&nbsp;mm thick. Honest state of it: it prints,
+          but reliable adhesion is still open future work, along with a
+          proper load-distribution plate and a Z-axis homing quirk in the
+          PLC logic.
         </p>
       </div>
     </div>
@@ -267,6 +268,6 @@
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=2"></script>
 </body>
 </html>

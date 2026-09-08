@@ -58,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Play muted preview videos only while their card is on screen,
   // so we're not decoding a dozen videos at once on page load.
   const previewVideos = document.querySelectorAll('video[data-autoplay-preview]');
+  previewVideos.forEach((v) => {
+    const rate = parseFloat(v.dataset.playbackRate);
+    if (rate) v.playbackRate = rate;
+  });
   if (previewVideos.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -155,6 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
       v.controls = true;
       v.autoplay = true;
       v.playsInline = true;
+      const rate = parseFloat(el.getAttribute('data-playback-rate'));
+      if (rate) v.playbackRate = rate;
       stage.appendChild(v);
     } else {
       const img = document.createElement('img');
