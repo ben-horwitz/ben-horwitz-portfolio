@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
+  // "Work" dropdown — jump straight to a project instead of only
+  // landing back on the homepage grid.
+  const workWrap = document.querySelector('.nav-work');
+  const workToggle = document.querySelector('.nav-work-toggle');
+  if (workWrap && workToggle) {
+    workToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const isOpen = workWrap.classList.toggle('open');
+      workToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    document.addEventListener('click', (e) => {
+      if (!workWrap.contains(e.target)) {
+        workWrap.classList.remove('open');
+        workToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   // Play muted preview videos only while their card is on screen,
   // so we're not decoding a dozen videos at once on page load.
   const previewVideos = document.querySelectorAll('video[data-autoplay-preview]');

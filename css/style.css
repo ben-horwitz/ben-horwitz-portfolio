@@ -175,6 +175,83 @@ h1, h2, .brand, .card-body h3 {
   .nav-toggle { display: block; margin-right: 20px; align-self: center; }
 }
 
+/* a small dropdown under "Work" to jump straight to a project instead
+   of routing everyone back through the homepage grid */
+.nav-work { position: relative; display: flex; align-items: stretch; }
+
+.nav-work-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  background: none;
+  border: none;
+  border-left: 1px solid var(--border-soft);
+  color: var(--text-faint);
+  font-size: 0.65rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+}
+
+.nav-work-toggle:hover { background: var(--bg-elevated); color: var(--text); }
+
+.nav-work-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 270px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: none;
+  display: none;
+  flex-direction: column;
+  z-index: 200;
+}
+
+.nav-work:hover .nav-work-menu,
+.nav-work.open .nav-work-menu {
+  display: flex;
+}
+
+.nav-links .nav-work-menu a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  border-left: none;
+  border-top: 1px solid var(--border-soft);
+}
+
+.nav-links .nav-work-menu a:first-child { border-top: none; }
+.nav-links .nav-work-menu a span { color: var(--stamp); font-weight: 700; }
+.nav-links .nav-work-menu a:hover { background: var(--bg-elevated); color: var(--text); }
+.nav-links .nav-work-menu a.current { color: var(--text); font-weight: 600; background: var(--bg-elevated); }
+
+@media (max-width: 640px) {
+  .nav-work { flex-direction: column; }
+  .nav-work-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 44px;
+    border-left: 1px solid var(--border-soft);
+  }
+  .nav-work:hover .nav-work-menu { display: none; }
+  .nav-work.open .nav-work-menu { display: flex; }
+  .nav-work-menu {
+    position: static;
+    border: none;
+    min-width: 0;
+  }
+  .nav-links .nav-work-menu a { padding: 12px 24px 12px 36px; border-top: 1px solid var(--border-soft); }
+}
+
 /* ---------- hero : asymmetric, not centered-eyebrow-heading-button ---------- */
 
 .hero {
@@ -472,6 +549,7 @@ h1, h2, .brand, .card-body h3 {
 .media-side {
   position: sticky;
   top: 68px;
+  width: fit-content;
   max-width: 340px;
   margin-left: auto;
   border: 1px solid var(--border);
@@ -534,6 +612,7 @@ h1, h2, .brand, .card-body h3 {
 
 /* a single small photo, numbered like a figure in a technical report */
 .story-media {
+  width: fit-content;
   max-width: 440px;
   margin: 28px auto;
   border: 1px solid var(--border);
@@ -579,22 +658,16 @@ h1, h2, .brand, .card-body h3 {
 
 /* two small photos side by side, still modest in size */
 .story-media-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  max-width: 680px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   margin: 28px auto;
-  align-items: end;
-  background: var(--border);
-  border: 1px solid var(--border);
+  align-items: flex-end;
 }
 
-.story-media-pair .story-media { margin: 0; max-width: none; border: none; transform: none !important; background: var(--bg); }
+.story-media-pair .story-media { margin: 0; transform: none !important; }
 .story-media-pair .story-media img, .story-media-pair .story-media video { max-height: 280px; }
-
-@media (max-width: 640px) {
-  .story-media-pair { grid-template-columns: 1fr; max-width: 320px; }
-}
 
 /* a text + photo row, alternating sides for rhythm — the photo stays
    compact, never more than a third of the row */
