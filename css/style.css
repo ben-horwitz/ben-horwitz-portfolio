@@ -824,11 +824,22 @@ h1, h2 {
   grid-template-columns: 1.3fr 0.7fr;
   gap: 56px;
   padding: 44px 0 90px;
-  align-items: start;
+  align-items: stretch;
+}
+
+/* the photo column is shorter than the text column by nature — rather
+   than leave a gap at the bottom, space the three photo blocks out
+   across the full height so the last one's bottom edge lines up with
+   the text column's, without cropping any of them to force it */
+.about-media {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (max-width: 760px) {
-  .about-layout { grid-template-columns: 1fr; }
+  .about-layout { grid-template-columns: 1fr; align-items: start; }
+  .about-media { display: block; }
 }
 
 .about-layout .prose > p:first-of-type::first-letter {
@@ -863,7 +874,7 @@ h1, h2 {
   background: var(--bg-elevated);
   cursor: zoom-in;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 82%;
+  width: 100%;
   box-shadow: 0 12px 22px rgba(20, 19, 15, 0.14);
 }
 
