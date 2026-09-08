@@ -243,40 +243,40 @@ h1, h2 {
 
 /* ---------- hero : one dominant line, an asymmetric second beat ---------- */
 
-.hero { padding: 36px 0 28px; }
+.hero { padding: 20px 0 14px; }
 
 .hero .wrap { display: block; }
 
 .hero .eyebrow {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--text-muted);
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 
 .hero h1 {
   font-weight: 500;
-  font-size: clamp(2.7rem, 6.4vw, 4.6rem);
+  font-size: clamp(2.1rem, 4.6vw, 3.2rem);
   line-height: 1.05;
   letter-spacing: -0.01em;
-  margin: 0 0 22px;
+  margin: 0 0 14px;
   max-width: 23ch;
 }
 
 .hero-lower {
   display: grid;
   grid-template-columns: 1.1fr 0.5fr auto;
-  gap: 40px;
+  gap: 32px;
   align-items: start;
   border-top: 2px solid var(--stamp);
-  padding-top: 18px;
+  padding-top: 14px;
 }
 
 .hero p {
   color: var(--text-muted);
-  font-size: 1.18rem;
-  max-width: 48ch;
+  font-size: 0.98rem;
+  max-width: 46ch;
   margin: 0;
   grid-column: 1;
 }
@@ -292,11 +292,11 @@ h1, h2 {
 
 .hero-photo {
   overflow: hidden;
-  /* wider, shorter crop — reads just as large but keeps the hero
-     compact enough that the project list isn't hidden below the fold */
-  aspect-ratio: 4 / 3;
+  /* wide, shallow crop — keeps the hero compact enough that the
+     project list is visible right on landing, not hidden below the fold */
+  aspect-ratio: 16 / 10;
   background: var(--bg-elevated);
-  width: 460px;
+  width: 320px;
   box-shadow: 0 18px 34px rgba(20, 19, 15, 0.18);
   grid-column: 3;
   justify-self: end;
@@ -354,7 +354,7 @@ h1, h2 {
   align-items: baseline;
   justify-content: space-between;
   margin: 8px 0 8px;
-  padding-top: 22px;
+  padding-top: 10px;
 }
 
 .section-title h2 {
@@ -595,6 +595,7 @@ h1, h2 {
   max-height: 420px;
   object-fit: contain;
   display: inline-block;
+  vertical-align: bottom;
 }
 
 @media (max-width: 860px) {
