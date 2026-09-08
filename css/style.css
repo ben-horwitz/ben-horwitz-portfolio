@@ -422,7 +422,8 @@ h1, h2, .brand, .card-body h3 {
   max-width: 360px;
   margin-left: auto;
   border: 1px solid var(--border-soft);
-  background: #000;
+  background: var(--bg-elevated);
+  padding: 10px;
   cursor: zoom-in;
   text-align: center;
 }
@@ -478,7 +479,8 @@ h1, h2, .brand, .card-body h3 {
   max-width: 460px;
   margin: 24px auto;
   border: 1px solid var(--border-soft);
-  background: #000;
+  background: var(--bg-elevated);
+  padding: 10px;
   cursor: zoom-in;
   transition: border-color 0.15s ease;
   text-align: center;

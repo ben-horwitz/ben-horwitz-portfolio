@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PPS Reaction Chamber — Ben Horwitz</title>
-<meta name="description" content="A custom reaction chamber built for a process engineering project.">
+<meta name="description" content="A custom reaction chamber for an organic chemistry lab, 3D printed in PPS at the SLU Center for Additive Manufacturing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Bricolage+Grotesque:opsz,wght@12..96,400..700&display=swap" rel="stylesheet">
@@ -33,41 +33,81 @@
         <p class="eyebrow">Process Engineering <span class="eyebrow-index">— 06 / 06</span></p>
         <h1>PPS Reaction Chamber</h1>
         <p class="tagline">
-          A custom-built reaction chamber designed to safely contain and control a
-          process reaction.
+          A custom reaction chamber for an organic chemistry lab — pump
+          inputs, a filter output, and a vacuum output automating a reaction
+          process, 3D printed in a plastic most desktop printers can't touch.
         </p>
         <dl class="spec-row">
-          <div><dt>Category</dt><dd>Process Engineering</dd></div>
+          <div><dt>Lab</dt><dd>SLU Center for Additive Manufacturing</dd></div>
+          <div><dt>Material</dt><dd>PPS</dd></div>
+          <div><dt>For</dt><dd>Organic Chemistry Lab</dd></div>
         </dl>
       </div>
       <div class="media-side" data-lightbox="../assets/img/pps-reaction-chamber-1.jpg"
-           data-caption="The PPS reaction chamber.">
+           data-caption="The finished reaction chamber.">
         <img src="../assets/img/pps-reaction-chamber-1.jpg" alt="PPS reaction chamber">
       </div>
     </div>
   </div>
 
-  <!-- EDIT ME: this project isn't on your Wix site either, so I have no real
-       details — I couldn't tell what "PPS" stands for or what reaction/process
-       this chamber runs from the files alone. Replace this with the real
-       story: what PPS means, the process, materials, pressure/temperature/
-       safety considerations, and what problem the design solved. -->
   <div class="story">
+    <div class="story-text">
+      <p>
+        This was research at the SLU Center for Additive Manufacturing: an
+        organic chemistry lab needed a way to automate a reaction, so I
+        designed a custom chamber around it — pump inputs to feed reagents
+        in, a filter output, and a vacuum output, all built into one printed
+        part instead of a rig of fittings and tubing bolted together.
+      </p>
+    </div>
+
     <div class="story-row">
       <div class="story-text">
+        <h3>Why PPS</h3>
         <p>
-          <strong>What it is:</strong> a purpose-built chamber for running and
-          containing a specific reaction, designed around the pressure,
-          temperature, and material-compatibility requirements of the
-          process.
+          The chamber needed to hold up to the reaction itself — chemically
+          resistant and stable at temperatures that would soften most
+          printable plastics. PPS (polyphenylene sulfide) handles both, which
+          is exactly why it's a pain to print.
         </p>
       </div>
-      <figure class="story-media" data-lightbox="../assets/img/pps-reaction-chamber-2.jpg"
-              data-caption="The reaction chamber, alternate view.">
-        <img src="../assets/img/pps-reaction-chamber-2.jpg" alt="PPS reaction chamber, alternate view">
-        <figcaption>Reaction chamber</figcaption>
+      <figure class="story-media" data-lightbox="../assets/img/pps-drawing.jpg"
+              data-caption="Early whiteboard sketch of the chamber and filter geometry.">
+        <img src="../assets/img/pps-drawing.jpg" alt="Whiteboard sketch of the reaction chamber design">
+        <figcaption>Whiteboarding the design</figcaption>
       </figure>
     </div>
+
+    <div class="story-media-pair">
+      <figure class="story-media" data-lightbox="../assets/img/pps-cad-early.jpg"
+              data-caption="An early CAD iteration of the chamber body.">
+        <img src="../assets/img/pps-cad-early.jpg" alt="Early CAD iteration of the reaction chamber">
+        <figcaption>Early CAD iteration</figcaption>
+      </figure>
+      <figure class="story-media" data-lightbox="../assets/img/pps-cad-slice.jpg"
+              data-caption="Cross-section through the filter assembly between the two chamber halves.">
+        <img src="../assets/img/pps-cad-slice.jpg" alt="CAD cross-section showing the filter assembly">
+        <figcaption>Filter assembly, in section</figcaption>
+      </figure>
+    </div>
+
+    <div class="story-text">
+      <h3>Printing It</h3>
+      <p>
+        I printed the chamber on a Bambu P1S, which doesn't officially
+        support PPS — its firmware caps the nozzle well below the
+        temperature the material actually needs. I got around it by feeding
+        the printer a modified thermistor reading, so it believed the nozzle
+        was cooler than it really was and kept driving the heater past its
+        normal ceiling. Not a supported workflow, but it printed.
+      </p>
+    </div>
+
+    <figure class="story-media" data-lightbox="../assets/img/pps-reaction-chamber-2.jpg"
+            data-caption="The finished chamber, with pneumatic fittings for the pump and vacuum lines and a dovetail mount.">
+      <img src="../assets/img/pps-reaction-chamber-2.jpg" alt="Finished PPS reaction chamber with fittings">
+      <figcaption>Fittings and dovetail mount</figcaption>
+    </figure>
   </div>
 
   <div class="project-nav">
