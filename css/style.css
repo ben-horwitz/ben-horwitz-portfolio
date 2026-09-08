@@ -517,6 +517,20 @@ h1, h2 {
 .project-hero--quiet .project-hero-layout { padding: 30px 0 46px; }
 .project-hero--quiet h1 { font-size: clamp(2rem, 4vw, 2.7rem); }
 .project-hero--quiet .tagline { font-size: 1.02rem; }
+.project-hero--quiet .media-side { width: 280px; max-width: 280px; }
+.project-hero--quiet .media-side video,
+.project-hero--quiet .media-side img {
+  width: 280px;
+  height: 260px;
+  max-height: none;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .project-hero--quiet .media-side { width: 240px; max-width: 240px; }
+  .project-hero--quiet .media-side video,
+  .project-hero--quiet .media-side img { width: 240px; height: 220px; }
+}
 
 /* the flagship — the biggest project in scope gets a title that
    actually says so, instead of matching everything else's scale */
