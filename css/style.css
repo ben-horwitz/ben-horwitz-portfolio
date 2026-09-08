@@ -3,19 +3,19 @@
    ========================================================================== */
 
 :root {
-  --bg: #120c07;
-  --bg-elevated: #1d140d;
-  --bg-card: #201610;
-  --border: #362415;
-  --border-soft: #271b12;
-  --text: #f6e8d6;
-  --text-muted: #c2a587;
-  --text-faint: #8a7259;
+  --bg: #1a1108;
+  --bg-elevated: #251809;
+  --bg-card: #281a0d;
+  --border: #3d2916;
+  --border-soft: #2d1e11;
+  --text: #f8ecd9;
+  --text-muted: #ccaa88;
+  --text-faint: #93765b;
   --accent: #4f7fff;
-  --accent-bright: #93b3ea;
-  --accent-soft: rgba(79, 127, 255, 0.1);
-  --accent-warm: #edac52;
-  --accent-warm-soft: rgba(237, 172, 82, 0.18);
+  --accent-bright: #a3bfea;
+  --accent-soft: rgba(79, 127, 255, 0.08);
+  --accent-warm: #f0b25e;
+  --accent-warm-soft: rgba(240, 178, 94, 0.2);
   --max-width: 1160px;
   --radius: 3px;
   --radius-md: 6px;
@@ -33,10 +33,10 @@ body {
   background:
     repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 88px),
     repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 88px),
-    radial-gradient(1400px 900px at 100% 0%, rgba(237, 172, 82, 0.32), transparent 62%),
-    radial-gradient(1000px 640px at 0% 20%, rgba(79, 127, 255, 0.12), transparent 55%),
-    radial-gradient(1300px 900px at 50% 100%, rgba(237, 172, 82, 0.22), transparent 62%),
-    radial-gradient(900px 700px at 20% 60%, rgba(200, 120, 60, 0.1), transparent 60%),
+    radial-gradient(1500px 1000px at 100% 0%, rgba(240, 178, 94, 0.4), transparent 64%),
+    radial-gradient(900px 600px at 0% 15%, rgba(79, 127, 255, 0.08), transparent 55%),
+    radial-gradient(1400px 1000px at 50% 100%, rgba(240, 178, 94, 0.3), transparent 65%),
+    radial-gradient(1000px 800px at 15% 55%, rgba(210, 130, 60, 0.16), transparent 62%),
     var(--bg);
   background-attachment: fixed;
   color: var(--text);
@@ -419,7 +419,7 @@ h1, h2, .brand, .card-body h3 {
 .media-side {
   position: sticky;
   top: 84px;
-  max-width: 300px;
+  max-width: 360px;
   margin-left: auto;
   border: 1px solid var(--border-soft);
   background: #000;
@@ -431,7 +431,7 @@ h1, h2, .brand, .card-body h3 {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 340px;
+  max-height: 440px;
   object-fit: contain;
   display: inline-block;
 }
@@ -475,7 +475,7 @@ h1, h2, .brand, .card-body h3 {
 /* a single small photo, centered in the text column — used sparingly,
    sized to its own content instead of a forced crop */
 .story-media {
-  max-width: 380px;
+  max-width: 460px;
   margin: 24px auto;
   border: 1px solid var(--border-soft);
   background: #000;
@@ -490,7 +490,7 @@ h1, h2, .brand, .card-body h3 {
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 300px;
+  max-height: 420px;
   object-fit: contain;
   display: inline-block;
 }
@@ -509,13 +509,13 @@ h1, h2, .brand, .card-body h3 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
-  max-width: 600px;
+  max-width: 700px;
   margin: 24px auto;
   align-items: end;
 }
 
 .story-media-pair .story-media { margin: 0; max-width: none; }
-.story-media-pair .story-media img, .story-media-pair .story-media video { max-height: 220px; }
+.story-media-pair .story-media img, .story-media-pair .story-media video { max-height: 300px; }
 
 @media (max-width: 640px) {
   .story-media-pair { grid-template-columns: 1fr; max-width: 300px; }
@@ -525,15 +525,15 @@ h1, h2, .brand, .card-body h3 {
    compact, never more than a third of the row */
 .story-row {
   display: grid;
-  grid-template-columns: 1fr 240px;
+  grid-template-columns: 1fr 320px;
   gap: 32px;
   align-items: center;
   margin: 36px 0;
 }
 
 .story-row .story-media { margin: 0; max-width: none; }
-.story-row .story-media img, .story-row .story-media video { max-height: 240px; }
-.story-row.story-row--reverse { grid-template-columns: 240px 1fr; }
+.story-row .story-media img, .story-row .story-media video { max-height: 320px; }
+.story-row.story-row--reverse { grid-template-columns: 320px 1fr; }
 .story-row.story-row--reverse .story-media { order: -1; }
 
 @media (max-width: 700px) {
