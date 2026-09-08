@@ -497,12 +497,20 @@ h1, h2 {
    are carried by one strong object photo, and one is a small, quiet
    piece rather than a flagship. Same grammar, different emphasis. */
 .project-hero--lead-image .project-hero-layout { grid-template-columns: 1.15fr 0.85fr; }
-.project-hero--lead-image .media-side { max-width: 420px; }
+.project-hero--lead-image .media-side { width: 420px; max-width: 420px; }
 .project-hero--lead-image .media-side video,
-.project-hero--lead-image .media-side img { max-height: 520px; }
+.project-hero--lead-image .media-side img {
+  width: 420px;
+  height: 360px;
+  max-height: none;
+  object-fit: cover;
+}
 
 @media (max-width: 860px) {
-  .project-hero--lead-image .media-side { max-width: 320px; }
+  .project-hero--lead-image .project-hero-layout { grid-template-columns: 1fr; }
+  .project-hero--lead-image .media-side { width: 320px; max-width: 320px; }
+  .project-hero--lead-image .media-side video,
+  .project-hero--lead-image .media-side img { width: 320px; height: 280px; }
 }
 
 .project-hero--quiet .project-hero-layout { padding: 30px 0 46px; }
