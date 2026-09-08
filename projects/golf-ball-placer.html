@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Golf Ball Placer — Ben Horwitz</title>
-<meta name="description" content="An automated mechanism that loads and places a golf ball on demand.">
+<title>Golf Ball &amp; Tee Placer — Ben Horwitz</title>
+<meta name="description" content="An assistive device that places a golf ball and tee for golfers with mobility issues, designed at Dartmouth College.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,42 +25,55 @@
 </header>
 
 <div class="wrap">
-  <a class="back-link" href="../index.html">&larr; All projects</a>
+  <a class="back-link" href="../index.html">&larr; All Projects</a>
 
   <div class="project-hero">
     <div class="project-hero-layout">
       <div>
-        <p class="eyebrow">Automation</p>
-        <h1>Golf Ball Placer</h1>
+        <p class="eyebrow">Assistive Design — 04 / 06</p>
+        <h1>Golf Ball &amp; Tee Placer</h1>
         <p class="tagline">
-          An automated mechanism that loads a golf ball from a hopper and places
-          it precisely, taken from CAD concept to a working prototype.
+          A device built to do one small, specific thing reliably: put a ball
+          and tee in the ground for golfers who can't easily bend down to do
+          it themselves.
         </p>
-        <div class="meta-row">
-          <span class="tag">Automation</span>
-          <span class="tag">CAD</span>
-          <span class="tag">Prototyping</span>
-        </div>
+        <dl class="spec-row">
+          <div><dt>Location</dt><dd>Dartmouth College</dd></div>
+          <div><dt>Date</dt><dd>Fall 2025</dd></div>
+          <div><dt>Avg. tries</dt><dd>1.8</dd></div>
+          <div><dt>Fastest time</dt><dd>5.26 sec</dd></div>
+        </dl>
         <div class="prose">
-          <!-- EDIT ME: describe the real use case (driving range? putting robot?),
-               how the load/place cycle actually works mechanically, and what you'd
-               improve next. -->
           <p>
-            <strong>The mechanism</strong> takes a golf ball from a loading position
-            and places it down in a repeatable spot, cycling automatically instead
-            of needing to be reset by hand between shots.
+            The goal was to help golfers with mobility issues — bad backs, bad
+            knees, arthritis — place a ball and tee into the ground without
+            bending or kneeling. A few similar products already exist, but
+            users consistently complain that they're hard to use, break
+            easily, and don't let you adjust tee height. We set out to fix all
+            three, and to place a ball and tee consistently across different
+            ground conditions.
           </p>
+          <h3>Build</h3>
           <p>
-            It started as a CAD concept to work out the load/place motion, then came
-            together as a physical prototype to prove the mechanism actually holds,
-            carries, and releases a ball reliably.
+            The final prototype combines aluminum tubing for the frame,
+            Dyneema cord for tension, an FDM 3D-printed cage to hold the ball
+            and tee, threaded rods for height adjustability, and a wood base
+            for stability.
+          </p>
+          <h3>Results</h3>
+          <p>
+            The design consistently placed a ball and tee into the ground —
+            first-time users needed an average of just 1.8 tries to get it
+            right, and our fastest recorded placement was 5.26 seconds, well
+            within how long it normally takes to tee up by hand.
           </p>
         </div>
       </div>
-      <div class="media-side">
-        <video controls playsinline preload="none"
+      <div class="media-side" data-lightbox="../assets/video/golf-ball-placer-placing.mp4"
+           data-caption="Placing a ball and tee into the ground.">
+        <video muted loop playsinline preload="none"
                poster="../assets/img/posters/golf-ball-placer-placing-poster.jpg"
-               data-click-to-play>
+               data-autoplay-preview>
           <source src="../assets/video/golf-ball-placer-placing.mp4" type="video/mp4">
         </video>
       </div>
@@ -69,26 +82,29 @@
 
   <div class="media-grid">
     <figure>
-      <img src="../assets/img/golf-ball-placer-cad.png" alt="Golf ball placer CAD model">
-      <figcaption>CAD concept</figcaption>
+      <img src="../assets/img/golf-ball-placer-cad.png" alt="Golf ball placer CAD model"
+           data-lightbox="../assets/img/golf-ball-placer-cad.png" data-caption="CAD design of the ball and tee placer.">
+      <figcaption>CAD design</figcaption>
     </figure>
     <figure>
       <video muted loop playsinline preload="none"
              poster="../assets/img/posters/golf-ball-placer-loading-poster.jpg"
-             data-autoplay-preview>
+             data-autoplay-preview
+             data-lightbox="../assets/video/golf-ball-placer-loading.mp4" data-caption="Loading a ball and tee into the device.">
         <source src="../assets/video/golf-ball-placer-loading.mp4" type="video/mp4">
       </video>
-      <figcaption>Loading a ball</figcaption>
+      <figcaption>Loading a ball &amp; tee</figcaption>
     </figure>
     <figure>
-      <img src="../assets/img/golf-ball-placer-triumphant.png" alt="Golf ball placer, successful placement">
-      <figcaption>Working prototype</figcaption>
+      <img src="../assets/img/golf-ball-placer-triumphant.png" alt="Golf ball placer, successful placement"
+           data-lightbox="../assets/img/golf-ball-placer-triumphant.png" data-caption="Carrying the final, working prototype.">
+      <figcaption>Final prototype</figcaption>
     </figure>
   </div>
 
   <div class="project-nav">
-    <a href="quick-release.html">&larr; Quick-Release Mechanism</a>
-    <a href="escapement.html">Clock Escapement &rarr;</a>
+    <a href="quick-release.html">&larr; Quick-Release Harperizer Lids</a>
+    <a href="escapement.html">Escapement Mechanism &rarr;</a>
   </div>
 </div>
 

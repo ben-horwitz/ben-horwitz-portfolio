@@ -26,24 +26,31 @@
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Mechanical design &amp; fabrication</p>
-    <h1>I design, machine, and build things that move.</h1>
-    <p>
-      <!-- EDIT ME: replace with your own one/two-sentence intro — program/school, focus area, what you're looking for (co-op, full-time, etc). -->
-      A collection of mechanism design, CAD/CAM, and fabrication projects — from
-      custom-machined golf equipment to a scratch-built resin 3D printer.
-    </p>
-    <div class="hero-links">
-      <a class="btn primary" href="#work">View work</a>
-      <a class="btn" href="about.html">About me</a>
-      <a class="btn" href="mailto:benhorwitz05@gmail.com">Get in touch</a>
+    <div>
+      <p class="eyebrow">Mechanical Engineering · Middlebury College</p>
+      <h1>I design, machine, and build things that move.</h1>
+      <p>
+        Senior double-majoring in Mechanical Engineering and Math, with a year of
+        engineering coursework at Dartmouth. This is a running record of what
+        I've designed and machined since — a golf-tee placer for golfers with
+        mobility issues, 140 production parts from a manufacturing internship,
+        a clock escapement built from chipboard up to milled aluminum.
+      </p>
+      <div class="hero-links">
+        <a class="btn primary" href="#work">View Work</a>
+        <a class="btn" href="about.html">About Me</a>
+        <a class="btn" href="mailto:benhorwitz05@gmail.com">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-photo" data-lightbox="assets/img/about-me-2.jpg" data-caption="Ben Horwitz.">
+      <img src="assets/img/about-me-2.jpg" alt="Ben Horwitz">
     </div>
   </div>
 </section>
 
 <div class="wrap" id="work">
   <div class="section-title">
-    <h2>Selected projects</h2>
+    <h2>Selected Projects</h2>
     <span class="count">06</span>
   </div>
 
@@ -52,6 +59,7 @@
     <a class="card" href="projects/hv-vpp.html">
       <div class="card-media">
         <span class="card-tag">3D Printing / Controls</span>
+        <span class="card-index">01</span>
         <img src="assets/gif/hv-vpp-tramming.gif" alt="Tramming the printer build plate" loading="lazy">
       </div>
       <div class="card-body">
@@ -63,6 +71,7 @@
     <a class="card" href="projects/putter.html">
       <div class="card-media">
         <span class="card-tag">CAD / CAM / Machining</span>
+        <span class="card-index">02</span>
         <video muted loop playsinline preload="none"
                poster="assets/img/posters/putter-head-on-poster.jpg"
                data-autoplay-preview>
@@ -70,14 +79,15 @@
         </video>
       </div>
       <div class="card-body">
-        <h3>Custom Machined Putter</h3>
-        <p>A golf putter designed in CAD and cut on a CNC mill, from raw stock to finished, face-milled head.</p>
+        <h3>Custom Golf Putter</h3>
+        <p>A blade-style putter in 303 stainless, milled on a 4th axis and modeled after pros like the Scotty Cameron Newport 2.</p>
       </div>
     </a>
 
     <a class="card" href="projects/quick-release.html">
       <div class="card-media">
-        <span class="card-tag">Mechanism Design</span>
+        <span class="card-tag">Manufacturing Internship</span>
+        <span class="card-index">03</span>
         <video muted loop playsinline preload="none"
                poster="assets/img/posters/quick-release-in-action-poster.jpg"
                data-autoplay-preview>
@@ -85,14 +95,15 @@
         </video>
       </div>
       <div class="card-body">
-        <h3>Quick-Release Mechanism</h3>
-        <p>A tool-free quick-release latch, designed and modeled as a full CAD assembly before being built and tested.</p>
+        <h3>Quick-Release Harperizer Lids</h3>
+        <p>140 precision parts across 10 quick-release lids, machined during a manufacturing internship at Mechanical Advantage.</p>
       </div>
     </a>
 
     <a class="card" href="projects/golf-ball-placer.html">
       <div class="card-media">
-        <span class="card-tag">Automation</span>
+        <span class="card-tag">Assistive Design</span>
+        <span class="card-index">04</span>
         <video muted loop playsinline preload="none"
                poster="assets/img/posters/golf-ball-placer-placing-poster.jpg"
                data-autoplay-preview>
@@ -100,25 +111,27 @@
         </video>
       </div>
       <div class="card-body">
-        <h3>Golf Ball Placer</h3>
-        <p>An automated mechanism that loads and places a golf ball on demand, from CAD concept to working prototype.</p>
+        <h3>Golf Ball &amp; Tee Placer</h3>
+        <p>An assistive device that places a ball and tee for golfers with mobility issues — as fast as 5.26 seconds.</p>
       </div>
     </a>
 
     <a class="card" href="projects/escapement.html">
       <div class="card-media">
         <span class="card-tag">Mechanism Design</span>
+        <span class="card-index">05</span>
         <img src="assets/gif/escapement-clock-tick.gif" alt="Escapement mechanism ticking" loading="lazy">
       </div>
       <div class="card-body">
-        <h3>Clock Escapement</h3>
-        <p>A precision escapement mechanism, iterated through several prototypes to hold a steady one-second tick.</p>
+        <h3>Escapement Mechanism</h3>
+        <p>A gravity-driven, pendulum-regulated escapement, iterated from chipboard prototypes up to a fully milled clock.</p>
       </div>
     </a>
 
     <a class="card" href="projects/pps-reaction-chamber.html">
       <div class="card-media">
         <span class="card-tag">Process Engineering</span>
+        <span class="card-index">06</span>
         <img src="assets/img/pps-reaction-chamber-1.jpg" alt="PPS reaction chamber">
       </div>
       <div class="card-body">
@@ -135,7 +148,6 @@
     <span>&copy; <span id="year"></span> Ben Horwitz</span>
     <div class="footer-links">
       <a href="mailto:benhorwitz05@gmail.com">Email</a>
-      <!-- EDIT ME: add LinkedIn / GitHub / resume links here -->
     </div>
   </div>
 </footer>

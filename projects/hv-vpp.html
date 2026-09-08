@@ -25,27 +25,29 @@
 </header>
 
 <div class="wrap">
-  <a class="back-link" href="../index.html">&larr; All projects</a>
+  <a class="back-link" href="../index.html">&larr; All Projects</a>
 
   <div class="project-hero">
     <div class="project-hero-layout">
       <div>
-        <p class="eyebrow">3D Printing / Controls</p>
+        <p class="eyebrow">3D Printing / Controls — 01 / 06</p>
         <h1>HV‑VPP Resin Printer</h1>
         <p class="tagline">
           A scratch-built vat photopolymerization (resin) 3D printer, with a
           PLC-controlled UV/LCD masking system driving the cure and a precision
           Z-axis and leveling setup underneath it.
         </p>
-        <div class="meta-row">
-          <span class="tag">Vat Photopolymerization</span>
-          <span class="tag">PLC / Controls</span>
-          <span class="tag">Machine Design</span>
-        </div>
+        <dl class="spec-row">
+          <div><dt>Process</dt><dd>Vat Photopolymerization</dd></div>
+          <div><dt>Controls</dt><dd>PLC</dd></div>
+        </dl>
         <div class="prose">
-          <!-- EDIT ME: "HV" is a placeholder guess (high-viscosity resin?) — replace
-               with what the acronym actually stands for, plus real specifics on the
-               resin/process, build volume, and what made this build non-trivial. -->
+          <!-- EDIT ME: this project isn't on your Wix site, so I don't have real
+               story details for it — everything below is my best guess from the
+               file names alone. "HV" is a placeholder guess (high-viscosity
+               resin?). Replace with the real story: what the acronym stands for,
+               what resin/process it runs, build volume, and what made this
+               build hard. -->
           <p>
             <strong>What it does:</strong> the printer cures a photopolymer resin
             layer by layer using a masked UV light source, projected through an LCD
@@ -53,6 +55,7 @@
             timing and sequencing between the UV exposure, the LCD mask, and Z-axis
             motion.
           </p>
+          <h3>Getting it reliable</h3>
           <p>
             Getting reliable prints meant tramming the build plate so it's parallel
             to the resin vat within a tight tolerance, tuning the Z-axis motion so
@@ -61,7 +64,8 @@
           </p>
         </div>
       </div>
-      <div class="media-side">
+      <div class="media-side" data-lightbox="../assets/gif/hv-vpp-tramming.gif"
+           data-caption="Tramming the build plate parallel to the resin vat.">
         <img src="../assets/gif/hv-vpp-tramming.gif" alt="Tramming the printer build plate">
       </div>
     </div>
@@ -71,15 +75,17 @@
     <figure>
       <video muted loop playsinline preload="none"
              poster="../assets/img/posters/hv-vpp-z-axis-reliability-poster.jpg"
-             data-autoplay-preview>
+             data-autoplay-preview
+             data-lightbox="../assets/video/hv-vpp-z-axis-reliability.mp4" data-caption="Testing Z-axis movement and repeatability.">
         <source src="../assets/video/hv-vpp-z-axis-reliability.mp4" type="video/mp4">
       </video>
-      <figcaption>Z-axis movement &amp; reliability testing</figcaption>
+      <figcaption>Z-axis movement &amp; reliability</figcaption>
     </figure>
     <figure>
       <video muted loop playsinline preload="none"
              poster="../assets/img/posters/hv-vpp-roller-moving-poster.jpg"
-             data-autoplay-preview>
+             data-autoplay-preview
+             data-lightbox="../assets/video/hv-vpp-roller-moving.mp4" data-caption="The recoating roller moving resin back into place between layers.">
         <source src="../assets/video/hv-vpp-roller-moving.mp4" type="video/mp4">
       </video>
       <figcaption>Recoating roller</figcaption>
@@ -87,40 +93,47 @@
     <figure>
       <video muted loop playsinline preload="none"
              poster="../assets/img/posters/hv-vpp-uv-light-controls-poster.jpg"
-             data-autoplay-preview>
+             data-autoplay-preview
+             data-lightbox="../assets/video/hv-vpp-uv-light-controls.mp4" data-caption="PLC-driven UV light controls.">
         <source src="../assets/video/hv-vpp-uv-light-controls.mp4" type="video/mp4">
       </video>
       <figcaption>UV light controls</figcaption>
     </figure>
     <figure>
-      <img src="../assets/img/hv-vpp-lcd-mask.jpg" alt="LCD masking panel">
+      <img src="../assets/img/hv-vpp-lcd-mask.jpg" alt="LCD masking panel"
+           data-lightbox="../assets/img/hv-vpp-lcd-mask.jpg" data-caption="The LCD panel that masks UV light per layer.">
       <figcaption>LCD mask</figcaption>
     </figure>
     <figure>
-      <img src="../assets/img/hv-vpp-plc.jpg" alt="PLC controller">
+      <img src="../assets/img/hv-vpp-plc.jpg" alt="PLC controller"
+           data-lightbox="../assets/img/hv-vpp-plc.jpg" data-caption="The PLC handling exposure and motion sequencing.">
       <figcaption>PLC controls</figcaption>
     </figure>
     <figure>
-      <img src="../assets/img/hv-vpp-printer-outside.jpg" alt="Printer, exterior view">
+      <img src="../assets/img/hv-vpp-printer-outside.jpg" alt="Printer, exterior view"
+           data-lightbox="../assets/img/hv-vpp-printer-outside.jpg" data-caption="The full machine.">
       <figcaption>Full machine</figcaption>
     </figure>
     <figure>
-      <img src="../assets/img/hv-vpp-inside-machine.jpg" alt="Inside the printer">
+      <img src="../assets/img/hv-vpp-inside-machine.jpg" alt="Inside the printer"
+           data-lightbox="../assets/img/hv-vpp-inside-machine.jpg" data-caption="Inside the printer.">
       <figcaption>Inside the machine</figcaption>
     </figure>
     <figure>
-      <img src="../assets/img/hv-vpp-nylon-parts.jpg" alt="Nylon printed parts">
+      <img src="../assets/img/hv-vpp-nylon-parts.jpg" alt="Nylon printed parts"
+           data-lightbox="../assets/img/hv-vpp-nylon-parts.jpg" data-caption="Nylon parts used in the build.">
       <figcaption>Nylon parts</figcaption>
     </figure>
     <figure>
-      <img src="../assets/img/hv-vpp-parts.jpg" alt="Machine parts">
+      <img src="../assets/img/hv-vpp-parts.jpg" alt="Machine parts"
+           data-lightbox="../assets/img/hv-vpp-parts.jpg" data-caption="Component parts of the machine.">
       <figcaption>Component parts</figcaption>
     </figure>
   </div>
 
   <div class="project-nav">
     <a href="pps-reaction-chamber.html">&larr; PPS Reaction Chamber</a>
-    <a href="putter.html">Custom Machined Putter &rarr;</a>
+    <a href="putter.html">Custom Golf Putter &rarr;</a>
   </div>
 </div>
 

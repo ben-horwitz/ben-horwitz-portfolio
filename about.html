@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Ben Horwitz</title>
-<meta name="description" content="About Ben Horwitz.">
+<meta name="description" content="About Ben Horwitz — mechanical engineering student at Middlebury College.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,35 +28,70 @@
   <div class="about-layout">
     <div>
       <p class="eyebrow">About</p>
-      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-0.02em;margin:0 0 20px;">Hi, I'm Ben.</h1>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-0.02em;margin:10px 0 20px;">Hi, I'm Ben.</h1>
       <div class="prose">
-        <!-- EDIT ME: this whole bio is a placeholder — swap in your real background,
-             school/program, what you're into, and what you're looking for. -->
         <p>
-          I'm a mechanical engineer who likes taking things from a rough sketch
-          to a working, machined part. Most of what's on this site started as a
-          CAD model, got argued with on a mill or a 3D printer, and came out the
-          other side as something that actually moves.
+          I'm a St. Louis, MO native, currently a senior at Middlebury College
+          double-majoring in Mechanical Engineering and Math. Middlebury doesn't
+          run its own full engineering program, so I spent my third year
+          studying mechanical engineering at Dartmouth before coming back to
+          Middlebury to finish out senior year.
         </p>
         <p>
-          Outside of the shop, you'll usually find me skiing.
+          On top of coursework, I'm a tour guide and teaching assistant at the
+          Middlebury Makerspace, and I was a TA for Kurt Gross's "Ski
+          Fabrication &amp; Design" class, where students build and machine
+          their own skis from scratch.
+        </p>
+        <p>
+          Most of what's on this site started the same way: a problem worth
+          solving, a CAD model, and then a lot of arguing with a mill, a laser
+          cutter, or a 3D printer until it actually worked.
         </p>
       </div>
-      <div class="hero-links" style="margin-top:24px;">
+
+      <div class="fact-sheet">
+        <dl>
+          <dt>Based in</dt><dd>St. Louis, MO</dd>
+          <dt>Studying</dt><dd>Mechanical Engineering &amp; Math, Middlebury College (Senior)</dd>
+          <dt>Also studied at</dt><dd>Dartmouth College (Mechanical Engineering, 3rd year)</dd>
+          <dt>High school</dt><dd>Ladue Horton Watkins, class of 2023</dd>
+          <dt>On campus</dt><dd>Tour guide &amp; TA, Middlebury Makerspace; TA, Ski Fabrication &amp; Design</dd>
+          <dt>Summers</dt><dd>Camper, then senior counselor, Camp Ramah in California (Ojai, CA)</dd>
+          <dt>Family</dt><dd>Two older brothers, Josh &amp; Ari; two Portuguese Water Dogs, Blue &amp; Kiwi</dd>
+        </dl>
+      </div>
+
+      <div class="prose">
+        <h3>Relevant coursework</h3>
+        <ul>
+          <li>Numerical Linear Algebra</li>
+          <li>Discrete &amp; Probabilistic Systems</li>
+          <li>Electrostatics &amp; Magnetism</li>
+          <li>Waves, Optics &amp; Thermodynamics</li>
+          <li>Multivariable Calculus</li>
+          <li>Abstract Algebra</li>
+        </ul>
+      </div>
+
+      <div class="hero-links" style="margin-top:8px;">
         <a class="btn primary" href="mailto:benhorwitz05@gmail.com">benhorwitz05@gmail.com</a>
-        <a class="btn" href="index.html">See my work</a>
+        <a class="btn" href="index.html">See My Work</a>
       </div>
     </div>
 
     <div>
       <div class="about-photos">
-        <img src="assets/img/about-me-1.jpg" alt="Ben Horwitz">
-        <img src="assets/img/about-me-2.jpg" alt="Ben Horwitz">
+        <img src="assets/img/about-me-1.jpg" alt="Ben Horwitz road cycling"
+             data-lightbox="assets/img/about-me-1.jpg" data-caption="Ben road cycling.">
+        <img src="assets/img/about-me-2.jpg" alt="Ben Horwitz with his dog"
+             data-lightbox="assets/img/about-me-2.jpg" data-caption="Ben with one of his two Portuguese Water Dogs, Blue and Kiwi.">
       </div>
       <div class="about-video">
-        <video controls playsinline preload="none"
+        <video muted loop playsinline preload="none"
                poster="assets/img/posters/about-me-skiing-poster.jpg"
-               data-click-to-play>
+               data-lightbox="assets/video/about-me-skiing.mp4" data-caption="Skiing."
+               data-autoplay-preview>
           <source src="assets/video/about-me-skiing.mp4" type="video/mp4">
         </video>
       </div>
