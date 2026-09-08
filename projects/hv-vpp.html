@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HV‑VPP Resin Printer — Ben Horwitz</title>
+<meta name="description" content="A scratch-built vat photopolymerization 3D printer with a PLC-driven UV/LCD masking system.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="brand">Ben <span>Horwitz</span></a>
+    <nav class="nav-links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="mailto:benhorwitz05@gmail.com">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html">&larr; All projects</a>
+
+  <div class="project-hero">
+    <p class="eyebrow">3D Printing / Controls</p>
+    <h1>HV‑VPP Resin Printer</h1>
+    <p class="tagline">
+      A scratch-built vat photopolymerization (resin) 3D printer, with a
+      PLC-controlled UV/LCD masking system driving the cure and a precision
+      Z-axis and leveling setup underneath it.
+    </p>
+    <div class="meta-row">
+      <span class="tag">Vat Photopolymerization</span>
+      <span class="tag">PLC / Controls</span>
+      <span class="tag">Machine Design</span>
+    </div>
+  </div>
+
+  <div class="media-hero">
+    <img src="../assets/gif/hv-vpp-tramming.gif" alt="Tramming the printer build plate">
+  </div>
+
+  <div class="prose">
+    <!-- EDIT ME: "HV" is a placeholder guess (high-viscosity resin?) — replace
+         with what the acronym actually stands for, plus real specifics on the
+         resin/process, build volume, and what made this build non-trivial. -->
+    <p>
+      <strong>What it does:</strong> the printer cures a photopolymer resin
+      layer by layer using a masked UV light source, projected through an LCD
+      panel that acts as a dynamic mask for each slice. A PLC handles the
+      timing and sequencing between the UV exposure, the LCD mask, and Z-axis
+      motion.
+    </p>
+    <p>
+      Getting reliable prints meant tramming the build plate so it's parallel
+      to the resin vat within a tight tolerance, tuning the Z-axis motion so
+      layers separate cleanly from the FEP film, and validating the roller and
+      recoating system so resin flows back in evenly between layers.
+    </p>
+  </div>
+
+  <div class="media-grid">
+    <figure>
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/hv-vpp-z-axis-reliability-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/hv-vpp-z-axis-reliability.mp4" type="video/mp4">
+      </video>
+      <figcaption>Z-axis movement &amp; reliability testing</figcaption>
+    </figure>
+    <figure>
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/hv-vpp-roller-moving-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/hv-vpp-roller-moving.mp4" type="video/mp4">
+      </video>
+      <figcaption>Recoating roller</figcaption>
+    </figure>
+    <figure>
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/hv-vpp-uv-light-controls-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/hv-vpp-uv-light-controls.mp4" type="video/mp4">
+      </video>
+      <figcaption>UV light controls</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/hv-vpp-lcd-mask.jpg" alt="LCD masking panel">
+      <figcaption>LCD mask</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/hv-vpp-plc.jpg" alt="PLC controller">
+      <figcaption>PLC controls</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/hv-vpp-printer-outside.jpg" alt="Printer, exterior view">
+      <figcaption>Full machine</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/hv-vpp-inside-machine.jpg" alt="Inside the printer">
+      <figcaption>Inside the machine</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/hv-vpp-nylon-parts.jpg" alt="Nylon printed parts">
+      <figcaption>Nylon parts</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/hv-vpp-parts.jpg" alt="Machine parts">
+      <figcaption>Component parts</figcaption>
+    </figure>
+  </div>
+
+  <div class="project-nav">
+    <a href="putter.html">&larr; Custom Machined Putter</a>
+    <a href="escapement.html">Clock Escapement &rarr;</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Ben Horwitz</span>
+    <div class="footer-links">
+      <a href="mailto:benhorwitz05@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

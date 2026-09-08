@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Machined Putter — Ben Horwitz</title>
+<meta name="description" content="A golf putter designed in CAD/CAM and machined from raw stock.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="brand">Ben <span>Horwitz</span></a>
+    <nav class="nav-links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="mailto:benhorwitz05@gmail.com">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html">&larr; All projects</a>
+
+  <div class="project-hero">
+    <p class="eyebrow">CAD / CAM / Machining</p>
+    <h1>Custom Machined Putter</h1>
+    <p class="tagline">
+      A golf putter modeled in CAD, programmed for CNC machining, and cut from
+      solid stock into a finished, playable head.
+    </p>
+    <div class="meta-row">
+      <span class="tag">CAD</span>
+      <span class="tag">CAM</span>
+      <span class="tag">CNC Milling</span>
+    </div>
+  </div>
+
+  <div class="media-hero">
+    <video controls playsinline preload="none"
+           poster="../assets/img/posters/putter-head-on-poster.jpg"
+           data-click-to-play>
+      <source src="../assets/video/putter-head-on.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="prose">
+    <!-- EDIT ME: draft copy below — swap in the real design goals, software used
+         (e.g. SolidWorks/Fusion 360), material, and any specifics on the toolpath
+         or setup that made this project interesting. -->
+    <p>
+      <strong>The goal</strong> was to take a putter from a full CAD model
+      through to a finished, machined part — face milling, weighting, and all
+      the small geometry that affects feel and roll, not just the CAD render.
+    </p>
+    <p>
+      The head was modeled first, then programmed in CAM to generate toolpaths
+      for the mill. Getting the face flat and the alignment features accurate
+      took a few passes of fixturing and cut planning before the final part
+      came off the machine.
+    </p>
+  </div>
+
+  <div class="media-grid">
+    <figure>
+      <img src="../assets/img/putter-cad.png" alt="Putter CAD model">
+      <figcaption>CAD model</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/putter-cam.png" alt="Putter CAM toolpaths">
+      <figcaption>CAM toolpaths</figcaption>
+    </figure>
+    <figure>
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/putter-side-view-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/putter-side-view.mp4" type="video/mp4">
+      </video>
+      <figcaption>Side profile</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/putter-face.jpg" alt="Putter face, milled finish">
+      <figcaption>Milled face</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/putter-back.jpg" alt="Putter back">
+      <figcaption>Back of head</figcaption>
+    </figure>
+  </div>
+
+  <div class="project-nav">
+    <a href="pps-reaction-chamber.html">&larr; PPS Reaction Chamber</a>
+    <a href="hv-vpp.html">HV‑VPP Resin Printer &rarr;</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Ben Horwitz</span>
+    <div class="footer-links">
+      <a href="mailto:benhorwitz05@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Ben Horwitz</title>
+<meta name="description" content="About Ben Horwitz.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">Ben <span>Horwitz</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Work</a>
+      <a href="about.html" class="active">About</a>
+      <a href="mailto:benhorwitz05@gmail.com">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="about-layout">
+    <div>
+      <p class="eyebrow">About</p>
+      <h1 style="font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-0.02em;margin:0 0 20px;">Hi, I'm Ben.</h1>
+      <div class="prose">
+        <!-- EDIT ME: this whole bio is a placeholder — swap in your real background,
+             school/program, what you're into, and what you're looking for. -->
+        <p>
+          I'm a mechanical engineer who likes taking things from a rough sketch
+          to a working, machined part. Most of what's on this site started as a
+          CAD model, got argued with on a mill or a 3D printer, and came out the
+          other side as something that actually moves.
+        </p>
+        <p>
+          Outside of the shop, you'll usually find me skiing.
+        </p>
+      </div>
+      <div class="hero-links" style="margin-top:24px;">
+        <a class="btn primary" href="mailto:benhorwitz05@gmail.com">benhorwitz05@gmail.com</a>
+        <a class="btn" href="index.html">See my work</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="about-photos">
+        <img src="assets/img/about-me-1.jpg" alt="Ben Horwitz">
+        <img src="assets/img/about-me-2.jpg" alt="Ben Horwitz">
+      </div>
+      <div class="about-video">
+        <video controls playsinline preload="none"
+               poster="assets/img/posters/about-me-skiing-poster.jpg"
+               data-click-to-play>
+          <source src="assets/video/about-me-skiing.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Ben Horwitz</span>
+    <div class="footer-links">
+      <a href="mailto:benhorwitz05@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clock Escapement — Ben Horwitz</title>
+<meta name="description" content="A precision escapement mechanism, iterated through several prototypes to hold a steady tick.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="brand">Ben <span>Horwitz</span></a>
+    <nav class="nav-links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="mailto:benhorwitz05@gmail.com">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html">&larr; All projects</a>
+
+  <div class="project-hero">
+    <p class="eyebrow">Mechanism Design</p>
+    <h1>Clock Escapement</h1>
+    <p class="tagline">
+      A mechanical clock escapement, designed to convert steady rotational
+      energy into a precise, periodic tick — refined over several prototype
+      iterations.
+    </p>
+    <div class="meta-row">
+      <span class="tag">Mechanism Design</span>
+      <span class="tag">Precision Machining</span>
+      <span class="tag">Iterative Prototyping</span>
+    </div>
+  </div>
+
+  <div class="media-hero">
+    <img src="../assets/gif/escapement-clock-tick.gif" alt="Escapement mechanism ticking">
+  </div>
+
+  <div class="prose">
+    <!-- EDIT ME: fill in the actual escapement type (e.g. anchor/deadbeat/grasshopper),
+         the gear ratios or geometry you tuned, and what changed between iterations. -->
+    <p>
+      <strong>The challenge</strong> with any escapement is getting the pallet
+      and escape wheel geometry precise enough that the mechanism releases at
+      a consistent, repeatable interval instead of drifting or skipping teeth.
+    </p>
+    <p>
+      This version went through multiple iterations — adjusting tooth
+      geometry, pallet engagement, and pivot friction — before settling into a
+      version that holds a clean, steady one-second tick.
+    </p>
+  </div>
+
+  <div class="media-grid">
+    <figure>
+      <img src="../assets/img/escapement-photo.jpg" alt="Escapement mechanism, close up">
+      <figcaption>Escapement mechanism</figcaption>
+    </figure>
+    <figure>
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/escapement-iteration-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/escapement-iteration.mp4" type="video/mp4">
+      </video>
+      <figcaption>Prototype iterations</figcaption>
+    </figure>
+  </div>
+
+  <div class="project-nav">
+    <a href="hv-vpp.html">&larr; HV‑VPP Resin Printer</a>
+    <a href="quick-release.html">Quick-Release Mechanism &rarr;</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Ben Horwitz</span>
+    <div class="footer-links">
+      <a href="mailto:benhorwitz05@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/main.js"></script>
+</body>
+</html>

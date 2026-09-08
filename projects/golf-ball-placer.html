@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golf Ball Placer — Ben Horwitz</title>
+<meta name="description" content="An automated mechanism that loads and places a golf ball on demand.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="brand">Ben <span>Horwitz</span></a>
+    <nav class="nav-links">
+      <a href="../index.html" class="active">Work</a>
+      <a href="../about.html">About</a>
+      <a href="mailto:benhorwitz05@gmail.com">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <a class="back-link" href="../index.html">&larr; All projects</a>
+
+  <div class="project-hero">
+    <p class="eyebrow">Automation</p>
+    <h1>Golf Ball Placer</h1>
+    <p class="tagline">
+      An automated mechanism that loads a golf ball from a hopper and places
+      it precisely, taken from CAD concept to a working prototype.
+    </p>
+    <div class="meta-row">
+      <span class="tag">Automation</span>
+      <span class="tag">CAD</span>
+      <span class="tag">Prototyping</span>
+    </div>
+  </div>
+
+  <div class="media-hero">
+    <video controls playsinline preload="none"
+           poster="../assets/img/posters/golf-ball-placer-placing-poster.jpg"
+           data-click-to-play>
+      <source src="../assets/video/golf-ball-placer-placing.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="prose">
+    <!-- EDIT ME: describe the real use case (driving range? putting robot?),
+         how the load/place cycle actually works mechanically, and what you'd
+         improve next. -->
+    <p>
+      <strong>The mechanism</strong> takes a golf ball from a loading position
+      and places it down in a repeatable spot, cycling automatically instead
+      of needing to be reset by hand between shots.
+    </p>
+    <p>
+      It started as a CAD concept to work out the load/place motion, then came
+      together as a physical prototype to prove the mechanism actually holds,
+      carries, and releases a ball reliably.
+    </p>
+  </div>
+
+  <div class="media-grid">
+    <figure>
+      <img src="../assets/img/golf-ball-placer-cad.png" alt="Golf ball placer CAD model">
+      <figcaption>CAD concept</figcaption>
+    </figure>
+    <figure>
+      <video muted loop playsinline preload="none"
+             poster="../assets/img/posters/golf-ball-placer-loading-poster.jpg"
+             data-autoplay-preview>
+        <source src="../assets/video/golf-ball-placer-loading.mp4" type="video/mp4">
+      </video>
+      <figcaption>Loading a ball</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/img/golf-ball-placer-triumphant.png" alt="Golf ball placer, successful placement">
+      <figcaption>Working prototype</figcaption>
+    </figure>
+  </div>
+
+  <div class="project-nav">
+    <a href="quick-release.html">&larr; Quick-Release Mechanism</a>
+    <a href="pps-reaction-chamber.html">PPS Reaction Chamber &rarr;</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> Ben Horwitz</span>
+    <div class="footer-links">
+      <a href="mailto:benhorwitz05@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="../js/main.js"></script>
+</body>
+</html>
