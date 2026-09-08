@@ -43,8 +43,9 @@ body {
      that visibly repeats as the page scrolls. */
   background-color: var(--bg);
   background-image:
-    radial-gradient(1500px 950px at 15% -5%, #faf6e9 0%, rgba(250, 246, 233, 0) 72%),
-    radial-gradient(1200px 850px at 94% 108%, #ddd4b9 0%, rgba(221, 212, 185, 0) 72%);
+    radial-gradient(1700px 1050px at 12% -10%, #fdf9ea 0%, rgba(253, 249, 234, 0) 70%),
+    radial-gradient(1400px 1000px at 96% 112%, #d2c6a3 0%, rgba(210, 198, 163, 0) 70%),
+    radial-gradient(2400px 1500px at 50% 40%, rgba(20, 19, 15, 0) 58%, rgba(20, 19, 15, 0.05) 100%);
   background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-sans);
@@ -60,9 +61,9 @@ body::before {
   inset: 0;
   z-index: 2000;
   pointer-events: none;
-  opacity: 0.045;
+  opacity: 0.065;
   mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
 }
 
@@ -248,15 +249,15 @@ h1, h2 {
 .hero .eyebrow {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   color: var(--text-muted);
-  margin: 0 0 6px;
+  margin: 0 0 8px;
 }
 
 .hero h1 {
   font-weight: 500;
-  font-size: clamp(2.3rem, 5.4vw, 3.9rem);
-  line-height: 1.08;
+  font-size: clamp(2.7rem, 6.4vw, 4.6rem);
+  line-height: 1.05;
   letter-spacing: -0.01em;
   margin: 0 0 40px;
   max-width: 23ch;
@@ -484,7 +485,7 @@ h1, h2 {
 
 .project-hero h1 {
   font-weight: 500;
-  font-size: clamp(2rem, 4.4vw, 3rem);
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
   letter-spacing: -0.01em;
   margin: 8px 0 18px;
 }
