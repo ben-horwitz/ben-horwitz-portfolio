@@ -37,7 +37,15 @@ html { color-scheme: light; scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  /* a soft, asymmetric wash — warm light from the upper-left, a touch of
+     depth lower-right — instead of a flat fill or a centered marketing-
+     page glow. Fixed so it reads as one still light source, not a tile
+     that visibly repeats as the page scrolls. */
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1100px 750px at 10% -8%, #f5f2e6 0%, rgba(245, 242, 230, 0) 55%),
+    radial-gradient(900px 650px at 96% 108%, #e6e1d0 0%, rgba(230, 225, 208, 0) 60%);
+  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-sans);
   line-height: 1.55;
@@ -166,14 +174,17 @@ h1, h2 {
   position: absolute;
   top: 100%;
   left: -14px;
-  margin-top: 14px;
+  /* padding-top (not margin-top) does the spacing — a margin here would
+     leave a dead gap between the trigger and the menu where the mouse
+     loses :hover before it ever reaches the menu, closing it instantly */
+  padding: 14px 0 6px;
   min-width: 260px;
   background: var(--bg-elevated);
+  background-clip: padding-box;
   box-shadow: 0 12px 24px rgba(20, 19, 15, 0.14);
   display: none;
   flex-direction: column;
   z-index: 200;
-  padding: 6px 0;
 }
 
 .nav-work:hover .nav-work-menu,
