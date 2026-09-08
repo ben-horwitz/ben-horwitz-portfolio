@@ -526,6 +526,20 @@ h1, h2 {
    air before it gets to the point */
 .project-hero--compact .project-hero-layout { padding: 4px 0 22px; gap: 32px; }
 .project-hero--compact .tagline { margin-bottom: 14px; }
+.project-hero--compact .media-side { width: 320px; max-width: 320px; }
+.project-hero--compact .media-side video,
+.project-hero--compact .media-side img {
+  width: 320px;
+  height: 280px;
+  max-height: none;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .project-hero--compact .media-side { width: 260px; max-width: 260px; }
+  .project-hero--compact .media-side video,
+  .project-hero--compact .media-side img { width: 260px; height: 220px; }
+}
 
 .project-hero h1 {
   font-weight: 500;
