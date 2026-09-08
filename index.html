@@ -7,7 +7,7 @@
 <meta name="description" content="Portfolio of mechanical design, machining, and fabrication projects by Ben Horwitz.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -48,51 +48,49 @@
 
 <section class="hero">
   <div class="wrap">
-    <div>
-      <p class="eyebrow">Aspiring Mechanical Engineer</p>
-      <h1>I design, machine, and build things that move.</h1>
+    <p class="eyebrow">Ben Horwitz — Middlebury College</p>
+    <h1>Things I've built that mostly work.</h1>
+    <div class="hero-lower">
       <p>
-        Math major at Middlebury College with an engineer's hands and a
-        liberal-arts writer's ability to explain what I built and why. Six
-        projects below — from a fully custom SLA resin printer to a clock
-        escapement machined from chipboard up to aluminum.
+        Math major with an engineer's hands — I design in CAD, machine it
+        myself, and write down how it actually went. A fully custom SLA
+        resin printer, a clock escapement machined from chipboard to
+        aluminum, and four other projects below.
       </p>
       <div class="hero-links">
-        <a class="btn primary" href="#work">View Work</a>
-        <a class="btn" href="about.html">About Me</a>
-        <a class="btn" href="mailto:benhorwitz05@gmail.com">Get In Touch</a>
+        <a class="primary" href="about.html">About me</a>
+        <a href="mailto:benhorwitz05@gmail.com">Email</a>
       </div>
-    </div>
-    <div class="hero-photo" data-lightbox="assets/img/about-me-2.jpg" data-caption="Ben Horwitz.">
-      <img src="assets/img/about-me-2.jpg" alt="Ben Horwitz">
+      <div class="hero-photo" data-lightbox="assets/img/about-me-2.jpg" data-caption="Ben Horwitz.">
+        <img src="assets/img/about-me-2.jpg" alt="Ben Horwitz">
+      </div>
     </div>
   </div>
 </section>
 
 <div class="wrap" id="work">
   <div class="section-title">
-    <h2>Selected Projects</h2>
+    <h2>Selected projects</h2>
     <span class="count">06</span>
   </div>
 
   <div class="project-grid">
 
     <a class="card" href="projects/hv-vpp.html">
+      <span class="card-index">01</span>
       <div class="card-media">
-        <span class="card-tag">Controls &amp; Mechanical Design</span>
-        <span class="card-index">01</span>
         <img src="assets/img/hv-vpp-inside-machine.jpg" alt="Inside the HV-VPP printer" loading="lazy">
       </div>
       <div class="card-body">
+        <span class="card-tag">Controls &amp; Mechanical Design</span>
         <h3>HV‑VPP Resin Printer</h3>
         <p>A fully custom SLA resin printer — I wrote the full PLC controls framework and machined much of the hardware.</p>
       </div>
     </a>
 
     <a class="card" href="projects/putter.html">
+      <span class="card-index">02</span>
       <div class="card-media">
-        <span class="card-tag">CAD / CAM / Machining</span>
-        <span class="card-index">02</span>
         <video muted loop playsinline preload="none"
                poster="assets/img/posters/putter-head-on-poster.jpg"
                data-autoplay-preview>
@@ -100,15 +98,15 @@
         </video>
       </div>
       <div class="card-body">
+        <span class="card-tag">CAD / CAM / Machining</span>
         <h3>Custom Golf Putter</h3>
         <p>A mallet putter in 303 stainless, milled on a 4th axis — with a blade-style follow-up on the drawing board.</p>
       </div>
     </a>
 
     <a class="card" href="projects/quick-release.html">
+      <span class="card-index">03</span>
       <div class="card-media">
-        <span class="card-tag">Manufacturing Internship</span>
-        <span class="card-index">03</span>
         <video muted loop playsinline preload="none"
                poster="assets/img/posters/quick-release-in-action-poster.jpg"
                data-autoplay-preview>
@@ -116,15 +114,15 @@
         </video>
       </div>
       <div class="card-body">
+        <span class="card-tag">Manufacturing Internship</span>
         <h3>Quick-Release Harperizer Lids</h3>
         <p>140 precision parts across 10 quick-release lids, machined during a manufacturing internship at Mechanical Advantage.</p>
       </div>
     </a>
 
     <a class="card" href="projects/golf-ball-placer.html">
+      <span class="card-index">04</span>
       <div class="card-media">
-        <span class="card-tag">Assistive Design</span>
-        <span class="card-index">04</span>
         <video muted loop playsinline preload="none"
                poster="assets/img/posters/golf-ball-placer-placing-poster.jpg"
                data-autoplay-preview>
@@ -132,30 +130,31 @@
         </video>
       </div>
       <div class="card-body">
+        <span class="card-tag">Assistive Design</span>
         <h3>Golf Ball &amp; Tee Placer</h3>
         <p>An assistive device that places a ball and tee for golfers with mobility issues — as fast as 5.26 seconds.</p>
       </div>
     </a>
 
     <a class="card" href="projects/escapement.html">
+      <span class="card-index">05</span>
       <div class="card-media">
-        <span class="card-tag">Mechanism Design</span>
-        <span class="card-index">05</span>
         <img src="assets/gif/escapement-clock-tick.gif" alt="Escapement mechanism ticking" loading="lazy">
       </div>
       <div class="card-body">
+        <span class="card-tag">Mechanism Design</span>
         <h3>Escapement Mechanism</h3>
         <p>A gravity-driven, pendulum-regulated escapement, iterated from chipboard prototypes up to a fully milled clock.</p>
       </div>
     </a>
 
     <a class="card" href="projects/pps-reaction-chamber.html">
+      <span class="card-index">06</span>
       <div class="card-media">
-        <span class="card-tag">Process Engineering</span>
-        <span class="card-index">06</span>
         <img src="assets/img/pps-reaction-chamber-1.jpg" alt="PPS reaction chamber">
       </div>
       <div class="card-body">
+        <span class="card-tag">Process Engineering</span>
         <h3>PPS Reaction Chamber</h3>
         <p>A custom reaction chamber for an organic chemistry lab, 3D printed in PPS for chemical and heat resistance.</p>
       </div>
