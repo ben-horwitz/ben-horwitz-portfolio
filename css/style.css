@@ -824,22 +824,19 @@ h1, h2 {
   grid-template-columns: 1.3fr 0.7fr;
   gap: 56px;
   padding: 44px 0 90px;
-  align-items: stretch;
+  align-items: start;
 }
 
-/* the photo column is shorter than the text column by nature — rather
-   than leave a gap at the bottom, space the three photo blocks out
-   across the full height so the last one's bottom edge lines up with
-   the text column's, without cropping any of them to force it */
+/* a consistent, modest rhythm between the three photo blocks — not
+   stretched out to force the column to some exact height */
 .about-media {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 28px;
 }
 
 @media (max-width: 760px) {
   .about-layout { grid-template-columns: 1fr; align-items: start; }
-  .about-media { display: block; }
 }
 
 .about-layout .prose > p:first-of-type::first-letter {
@@ -869,7 +866,6 @@ h1, h2 {
 .about-photos img:hover { transform: translateY(-6px); box-shadow: 0 20px 32px rgba(20, 19, 15, 0.2); }
 
 .about-video {
-  margin-top: 26px;
   overflow: hidden;
   background: var(--bg-elevated);
   cursor: zoom-in;
@@ -882,11 +878,10 @@ h1, h2 {
   transform: translateY(-6px);
   box-shadow: 0 20px 32px rgba(20, 19, 15, 0.2);
 }
-.about-video video { width: 100%; max-height: 480px; object-fit: cover; transition: transform 0.3s ease; }
+.about-video video { width: 100%; max-height: 560px; object-fit: cover; transition: transform 0.3s ease; }
 .about-video:hover video { transform: scale(1.02); }
 
 .about-wide-photo {
-  margin-top: 26px;
   overflow: hidden;
   background: var(--bg-elevated);
   cursor: zoom-in;
