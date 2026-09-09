@@ -707,6 +707,17 @@ h1, h2 {
   object-fit: cover;
 }
 
+/* a narrow portrait clip paired beside a longer caption — trim a
+   little off the top/bottom (not a proportional shrink, which would
+   also narrow it) so the whole card lands at the same height as its
+   partner in the pair despite the extra caption line */
+.story-media.crop-short img, .story-media.crop-short video {
+  width: 169px;
+  height: 276px;
+  max-height: none;
+  object-fit: cover;
+}
+
 .story-media figcaption {
   /* width:0 + min-width:100% keeps a long caption from contributing
      its own (unwrapped) text width to the figure's fit-content sizing
