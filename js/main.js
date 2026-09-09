@@ -212,3 +212,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') step(1);
   });
 });
+
+// ---------- visitor alert ----------
+// Sends Ben a phone push notification (via a private ntfy.sh topic) when
+// someone who isn't Ben has been on the site for a few seconds. No backend
+// involved: ntfy.sh accepts a plain POST straight from browser JS. No
+// geolocation or IP lookup — just a "someone's here" ping and which page.
+// Runs at most once per browser tab session.
+//
+// To mark this browser as "Ben" (so it never notifies you about your own
+// visits), open the site once with ?owner=1 in the URL — the flag is
+// saved in localStorage and persists after that.
+(function () {
+  const NTFY_TOPIC = 'bh-portfolio-ffc164da9d23';
+  const DWELL_MS = 8000;
+
+  try {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('owner') === '1') localStorage.setItem('bhIsOwner', '1');
+    if (localStorage.getItem('bhIsOwner') === '1') return;
+    if (sessionStorage.getItem('bhNotified') === '1') return;
+  } catch (e) {
+    return; // storage blocked (private browsing, etc.) — skip rather than risk a broken/duplicate alert
+  }
+
+  setTimeout(() => {
+    try {
+      if (sessionStorage.getItem('bhNotified') === '1') return;
+      sessionStorage.setItem('bhNotified', '1');
+    } catch (e) {
+      return;
+    }
+
+    fetch('https://ntfy.sh/' + NTFY_TOPIC, {
+      method: 'POST',
+      body: `Someone's on your site — ${window.location.pathname}`,
+    }).catch(() => {});
+  }, DWELL_MS);
+})();
