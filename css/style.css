@@ -260,8 +260,17 @@ h1, h2 {
   font-size: clamp(2.1rem, 4.6vw, 3.2rem);
   line-height: 1.05;
   letter-spacing: -0.01em;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   max-width: 23ch;
+}
+
+.hero-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin: 0 0 14px;
 }
 
 .hero-lower {
@@ -288,6 +297,11 @@ h1, h2 {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   grid-column: 2;
+  /* pinned to row 1 explicitly — with two <p> tags now stacked in
+     column 1, grid auto-placement would otherwise push this into
+     row 2 alongside the second paragraph instead of sitting beside
+     the first */
+  grid-row: 1;
 }
 
 .hero-photo {
@@ -300,6 +314,7 @@ h1, h2 {
   width: 360px;
   box-shadow: 0 18px 34px rgba(20, 19, 15, 0.18);
   grid-column: 3;
+  grid-row: 1;
   justify-self: end;
 }
 
