@@ -708,6 +708,14 @@ h1, h2 {
 }
 
 .story-media figcaption {
+  /* width:0 + min-width:100% keeps a long caption from contributing
+     its own (unwrapped) text width to the figure's fit-content sizing
+     — without this, a caption wider than a narrow/portrait photo or
+     video stretches the whole card and leaves a blank block beside
+     the media instead of wrapping the caption text. */
+  width: 0;
+  min-width: 100%;
+  box-sizing: border-box;
   padding: 10px 2px 0;
   font-family: var(--font-display);
   font-style: italic;
