@@ -54,9 +54,7 @@
         <p class="eyebrow">Mechanism Design <span class="eyebrow-index">— 05 / 06</span></p>
         <h1>Escapement Mechanism</h1>
         <p class="tagline">
-          The same part that ticks inside a grandfather clock, designed small
-          enough to build with a Haas Mini Mill and precise enough to
-          actually keep time.
+          I precision-milled and designed a gravity-driven clock escapement.
         </p>
         <dl class="spec-row">
           <div><dt>Location</dt><dd>Middlebury Makerspace</dd></div>
@@ -74,10 +72,11 @@
     <div class="story-row">
       <div class="story-text">
         <p>
-          An escapement is the part of a clock that turns steady stored
-          energy into a controlled, periodic tick (it's what you're hearing
-          in most grandfather clocks). Mine is driven by gravity, with a
-          weight on a fishing string, and regulated by a pendulum.
+          An escapement converts continuous rotational energy into discrete
+          periodic impulses. Driven by a drop-weight on a line and
+          regulated by a pendulum, this mechanism relies on precise tooth
+          geometry between the escape wheel and anchor pallets to prevent
+          slipping or lockup.
         </p>
       </div>
       <figure class="story-media" data-lightbox="../assets/img/escapement-photo.jpg"
@@ -88,26 +87,17 @@
     </div>
 
     <div class="story-text">
+      <h3>Prototyping &amp; Iteration</h3>
       <p>
-        The part that actually matters is the interaction between the escape
-        wheel and the arm: the wheel is only allowed to turn exactly one
-        tooth every time the pendulum completes a full period. Get that
-        geometry wrong and the whole mechanism drifts or skips.
-      </p>
-      <h3>From Chipboard To A Working Clock</h3>
-      <p>
-        I started with just the two components that had to work together —
-        the escape wheel and the arm — and laser cut the first prototype out
-        of chipboard and acrylic to test the interaction cheaply. Once that
-        worked, I added a gear and pulley system so it functioned more like
-        an actual clock, plus a clamp to hold a carbon fiber dowel rod as the
-        pendulum.
+        I isolated the escape wheel and pallet geometry first, prototyping
+        in laser-cut chipboard and acrylic to verify mechanical engagement.
+        After confirming tooth clearance, I added gear reductions, a
+        winding pulley, and a carbon-fiber pendulum rod clamp.
       </p>
       <p>
-        Before committing to milling the whole thing, I 3D printed a
-        scaled-down version to confirm the design actually worked at speed.
-        The video below shows the full run of iterations — laser cut, 3D
-        printed, and finally CNC milled.
+        To validate full-speed operation before final machining, I produced
+        a scaled FDM 3D print. The final version was CNC-milled from
+        aluminum stock.
       </p>
     </div>
 
@@ -118,7 +108,7 @@
              data-autoplay-preview>
         <source src="../assets/video/escapement-iteration.mp4" type="video/mp4">
       </video>
-      <figcaption>Chipboard &rarr; acrylic &rarr; 3D print &rarr; milled aluminum</figcaption>
+      <figcaption>Iteration process: Chipboard &rarr; Acrylic &rarr; 3D Print &rarr; Milled Aluminum</figcaption>
     </figure>
   </div>
 

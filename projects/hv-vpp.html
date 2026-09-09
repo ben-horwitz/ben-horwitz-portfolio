@@ -54,11 +54,9 @@
         <p class="eyebrow">Controls &amp; Mechanical Design <span class="eyebrow-index">— 01 / 06</span></p>
         <h1>HV‑VPP Resin Printer</h1>
         <p class="tagline">
-          A high-viscosity vat photopolymerization 3D printer, built over a
-          summer research position — I wrote the full PLC controls framework
-          from scratch and designed, machined, and assembled the printer,
-          eventually enabling it to print multilayer, high-viscosity
-          silicone parts.
+          I built a fully custom high-viscosity vat photopolymerization
+          (HV-VPP) 3D printer, enabling the creation of silicone actuators
+          for eventual use in soft robotics.
         </p>
         <dl class="spec-row">
           <div><dt>Lab</dt><dd>Digital Design &amp; Manufacturing Lab</dd></div>
@@ -77,20 +75,17 @@
     <div class="story-text">
       <p>
         <strong>HV-VPP stands for high-viscosity vat photopolymerization</strong>
-        — a 3D printing process that cures liquid resin with UV light,
-        masked through an LCD panel that acts as a "stencil" for every
-        slice. Standard resin printers assume a thin, free-flowing resin;
-        this machine is built to handle much thicker, higher-viscosity
-        material instead, which changes almost everything about how you
-        have to recoat and level each layer.
+        — it uses UV light masked through an LCD panel to cure liquid resin
+        layer by layer. While standard resin printers rely on thin,
+        low-viscosity resins, this machine processes dense, high-viscosity
+        materials instead, requiring a custom approach to layer recoating
+        and leveling.
       </p>
       <p>
-        I joined the lab's build of this printer from close to zero and left
-        with a working machine. My part of it split into two halves: specing
-        and configuring the entire PLC control framework that runs the
-        printer, and designing, machining, and assembling a large share of
-        the mechanical hardware itself — the Z-axis and build-plate mount,
-        the machine's rigidization, the roller and servo couplers, and more.
+        I joined the project when it was just a printer frame and turned it
+        into a functional prototype. My work focused on two main areas:
+        architecting the PLC control system and engineering key mechanical
+        hardware.
       </p>
     </div>
 
@@ -98,20 +93,9 @@
       <div class="story-text">
         <h3>Bringing The Controls Online</h3>
         <p>
-          The printer runs on a Beckhoff PLC programmed in TwinCAT. Getting
-          there took a while: the Z-axis servo first got stuck refusing to
-          leave "ready for operation" over a wiring issue, and once it moved,
-          I had it running through the industrial controller as a
-          EtherCAT&nbsp;"slave" — still dependent on a separate host computer.
-          I reconfigured it to run as the "master" instead, so the controller
-          itself drives the Z-axis and every other motor and actuator
-          directly.
-        </p>
-        <p>
-          Scaling that up meant swapping bus terminals as the current draw
-          grew — an EL7031 stepper driver maxed out at 1.5&nbsp;A, so I moved
-          the steppers to an EL7041 rated for 5&nbsp;A, alongside an EK1100
-          EtherCAT coupler tying the whole bus together.
+          The printer runs on a Beckhoff PLC programmed in TwinCAT. I
+          reconfigured the system to run as an EtherCAT master, allowing the
+          Beckhoff controller to drive all motors and actuators directly.
         </p>
       </div>
       <figure class="story-media" data-lightbox="../assets/img/hv-vpp-plc.jpg"
@@ -132,26 +116,25 @@
         </video>
       </figure>
       <div class="story-text story-text--note">
-        <p>Z-axis, running under PLC control — testing movement and repeatability once it came online.</p>
+        <p>Z-axis running under PLC control during movement and repeatability testing.</p>
       </div>
     </div>
 
     <div class="story-text">
       <h3>Building The Mechanical System</h3>
       <p>
-        On the hardware side, the printer's optical breadboard needed to be
-        rigid to the frame instead of sitting on adjustable stands. I
-        designed a standoff to do that, ran an FEA pass on it (400&nbsp;lbf
-        total load, static and buckling), and manufacturing; first
-        SLA-printed (which warped under UV), then finally SLS nylon, machined
-        afterward for flatness.
+        To ensure optical stability, the breadboard frame was locked to the
+        outer chassis using custom standoffs rather than adjustable feet. I
+        validated the design using FEA under a 400&nbsp;lbf static and
+        buckling load. To avoid the warping seen in early SLA prototypes
+        during UV curing, I produced the final standoffs out of SLS nylon
+        and finish-machined them for surface flatness.
       </p>
       <p>
-        Elsewhere, I machined the servo and roller couplers out of 303
-        stainless — one bore had to come down to a 0.5005" interference fit
-        by hand on the lathe to actually clamp — and built the gauge blocks
-        used to align all the recoating rollers in-plane, with dovetails so
-        they could be pulled out for machine maintenance.
+        Additionally, I turned custom servo and roller couplers out of 303
+        stainless steel, maintaining a press fit for clamping. I also
+        fabricated custom dovetail gauge blocks to align the recoating
+        rollers in-plane while allowing quick removal during maintenance.
       </p>
     </div>
 
@@ -177,11 +160,11 @@
       <div class="story-text">
         <h3>UV &amp; LCD Masking</h3>
         <p>
-          Each of the printer's UV power supplies dims over a 0–10V signal.
-          Adding an EL4001 bus adapter let the PLC drive the 0–10V line
-          directly and fixed it for all ten supplies at once. The LCD
-          masking panels came up separately and are now driving per-layer
-          masks under a python slicer.
+          Each UV power supply dims via a 0–10V analog signal. By
+          integrating an EL4001 bus terminal, the PLC can directly manage
+          power output across all ten supplies simultaneously. Layer
+          masking is driven through LCD panels controlled by a custom
+          Python slicer script.
         </p>
       </div>
       <figure class="story-media" data-lightbox="../assets/img/hv-vpp-lcd-mask.jpg"
@@ -193,7 +176,7 @@
 
     <div class="story-row">
       <div class="story-text story-text--note">
-        <p>PLC-driven UV light controls, running cleanly after the EL4001 fix.</p>
+        <p>PLC-driven UV light controls running via the EL4001 terminal.</p>
       </div>
       <figure class="story-media" data-lightbox="../assets/video/hv-vpp-uv-light-controls.mp4"
               data-caption="PLC-driven UV light controls, after the EL4001 fix.">
@@ -214,18 +197,18 @@
       <div class="story-text">
         <h3>Tramming &amp; First Prints</h3>
         <p>
-          Once the frame was rigidized, the build plate was still about 1°
-          out of plane with the breadboard, which measured flat to within
-          0.01–0.02° on its own. Shimming the standoffs closed that gap and
-          got the plate trammed to the vat.
+          Initial alignment showed the build plate was approximately 1° out
+          of plane from the breadboard. Precise shimming at the standoffs
+          corrected the offset and aligned the plate parallel to the resin
+          vat.
         </p>
         <p>
-          On print day, at roughly 0.5mm layers and a 1-minute cure, we were
-          able to print three layers, measuring the final part width to be
-          almost precisely 1.5&nbsp;mm thick. Honest state of it: it prints,
-          but reliable adhesion is still open future work, along with a
-          proper load-distribution plate and a Z-axis homing quirk in the
-          PLC logic.
+          During initial test runs with 0.5&nbsp;mm layer heights and
+          1-minute exposure times, the printer successfully cured
+          three-layer test structures measuring 1.5&nbsp;mm in thickness.
+          Future iterations will focus on improving layer-to-layer
+          adhesion, refining load distribution across the build plate, and
+          adjusting the Z-axis homing logic.
         </p>
       </div>
     </div>
@@ -234,7 +217,7 @@
       <figure class="story-media" data-lightbox="../assets/img/hv-vpp-parts.jpg"
               data-caption="Actual prints off the machine: one 0.5mm layer (left) next to three stacked 0.5mm layers (right), checking adhesion between layers.">
         <img src="../assets/img/hv-vpp-parts.jpg" alt="Test prints from the HV-VPP printer">
-        <figcaption>One layer vs. three, straight off the printer</figcaption>
+        <figcaption>One layer vs. three layers, straight off the printer</figcaption>
       </figure>
 
       <figure class="story-media" data-lightbox="../assets/img/hv-vpp-printer-outside.jpg"
@@ -246,8 +229,9 @@
 
     <div class="story-text">
       <p>
-        Built alongside Roxy Carbonell, Matt McCoy, and Keenan Vaughn, under
-        Dr.&nbsp;Seepersad at the Digital Design &amp; Manufacturing Lab.
+        Built alongside Roxy Carbonell, Matt McCoy, and Keenan Vaughn under
+        Dr.&nbsp;Carolyn Seepersad at the Digital Design &amp; Manufacturing
+        Lab.
       </p>
     </div>
   </div>

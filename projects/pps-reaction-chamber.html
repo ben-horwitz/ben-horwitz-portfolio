@@ -54,10 +54,9 @@
         <p class="eyebrow">Process Engineering <span class="eyebrow-index">— 06 / 06</span></p>
         <h1>PPS Reaction Chamber</h1>
         <p class="tagline">
-          A custom reaction chamber for an organic chemistry lab; pump
-          inputs, a filter outlet, allowing for a vacuum-controlled outlet
-          automating a reaction process. The chamber is 3D printed in a
-          plastic most desktop printers can't touch.
+          I manufactured a custom, chemical-resistant reaction vessel
+          3D-printed in polyphenylene sulfide (PPS) for an organic
+          chemistry lab.
         </p>
         <dl class="spec-row">
           <div><dt>Lab</dt><dd>SLU Center for Additive Manufacturing</dd></div>
@@ -75,11 +74,10 @@
   <div class="story">
     <div class="story-text">
       <p>
-        This was research at the SLU Center for Additive Manufacturing: an
-        organic chemistry lab needed a way to automate a reaction, so I
-        designed a custom chamber around it, all built into one printed
-        part instead of a larger, glass, prefabricated, and expensive
-        chamber.
+        Designed at the SLU Center for Additive Manufacturing, this
+        single-piece reaction chamber integrates pump inputs, a filter
+        outlet, and a vacuum port to automate chemical processing,
+        replacing expensive and fragile multi-piece glass assemblies.
       </p>
     </div>
 
@@ -87,10 +85,8 @@
       <div class="story-text">
         <h3>Why PPS</h3>
         <p>
-          The chamber needed to hold up to the reaction itself. PPS
-          (polyphenylene sulfide) is chemically resistant and stable at
-          temperatures that would soften most printable plastics, which is
-          exactly why it's a pain to print.
+          The application required polyphenylene sulfide (PPS) due to its
+          extreme chemical resistance and high thermal stability.
         </p>
       </div>
       <figure class="story-media" data-lightbox="../assets/img/pps-drawing.jpg"
@@ -109,19 +105,18 @@
       <figure class="story-media" data-lightbox="../assets/img/pps-cad-slice.jpg"
               data-caption="Cross-section through the filter assembly between the two chamber halves.">
         <img src="../assets/img/pps-cad-slice.jpg" alt="CAD cross-section showing the filter assembly">
-        <figcaption>Filter assembly, in section</figcaption>
+        <figcaption>Filter assembly cross-section</figcaption>
       </figure>
     </div>
 
     <div class="story-text">
-      <h3>Printing It</h3>
+      <h3>High-Temperature PPS Printing</h3>
       <p>
-        I printed the chamber on a Bambu P1S, which doesn't officially
-        support PPS. Its firmware caps the nozzle well below the temperature
-        the material actually needs. The lab got around it by feeding the
-        printer a modified thermistor reading, so it believed the nozzle was
-        cooler than it really was and kept driving the heater past its
-        normal ceiling. Not a supported workflow, but it printed.
+        Because standard desktop hardware caps nozzle temperatures below
+        PPS processing levels, I assisted the lab in modifying the
+        thermistor resistance values on a Bambu P1S to override firmware
+        safety limits. This allowed the hotend to maintain the higher
+        temperatures required to extrude the material cleanly.
       </p>
     </div>
 
