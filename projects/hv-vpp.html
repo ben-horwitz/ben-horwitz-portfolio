@@ -54,9 +54,9 @@
         <p class="eyebrow">Controls &amp; Mechanical Design <span class="eyebrow-index">- 01 / 06</span></p>
         <h1>HV‑VPP Resin Printer</h1>
         <p class="tagline">
-          I built a fully custom high-viscosity vat photopolymerization
-          (HV-VPP) 3D printer, enabling the creation of silicone actuators
-          for eventual use in soft robotics.
+          I designed and built a custom high-viscosity vat
+          photopolymerization (HV-VPP) 3D printer, enabling the creation of
+          silicone actuators for eventual use in soft robotics.
         </p>
         <dl class="spec-row">
           <div><dt>Lab</dt><dd>Digital Design &amp; Manufacturing Lab</dd></div>
@@ -78,14 +78,15 @@
         - it uses UV light masked through an LCD panel to cure liquid resin
         layer by layer. While standard resin printers rely on thin,
         low-viscosity resins, this machine processes dense, high-viscosity
-        materials instead, requiring a custom approach to layer recoating
-        and leveling.
+        materials, requiring a custom approach to layer recoating and
+        leveling.
       </p>
       <p>
-        I joined the project when it was just a printer frame and turned it
-        into a functional prototype. My work focused on two main areas:
-        architecting the PLC control system and engineering key mechanical
-        hardware.
+        I joined the project when it consisted primarily of a printer frame
+        and developed the mechanical and controls architecture required to
+        turn it into a functional prototype. With guidance from PhD
+        researchers in the lab, I independently designed the PLC control
+        system and engineered the machine's key mechanical hardware.
       </p>
     </div>
 
@@ -94,8 +95,9 @@
         <h3>Bringing The Controls Online</h3>
         <p>
           The printer runs on a Beckhoff PLC programmed in TwinCAT. I
-          reconfigured the system to run as an EtherCAT master, allowing the
-          Beckhoff controller to drive all motors and actuators directly.
+          reconfigured the system to operate as an EtherCAT master, allowing
+          the Beckhoff controller to directly coordinate the machine's
+          motors and actuators.
         </p>
       </div>
       <figure class="story-media" data-lightbox="../assets/img/hv-vpp-plc.jpg"
@@ -123,18 +125,18 @@
     <div class="story-text">
       <h3>Building The Mechanical System</h3>
       <p>
-        To ensure optical stability, the breadboard frame was locked to the
+        To ensure optical stability, I locked the breadboard frame to the
         outer chassis using custom standoffs rather than adjustable feet. I
         validated the design using FEA under a 400&nbsp;lbf static and
-        buckling load. To avoid the warping seen in early SLA prototypes
-        during UV curing, I produced the final standoffs out of SLS nylon
-        and finish-machined them for surface flatness.
+        buckling load. To eliminate the warping seen in early SLA prototypes
+        during UV curing, I produced the final standoffs from SLS nylon and
+        finish-machined them for surface flatness.
       </p>
       <p>
-        Additionally, I turned custom servo and roller couplers out of 303
-        stainless steel, maintaining a press fit for clamping. I also
-        fabricated custom dovetail gauge blocks to align the recoating
-        rollers in-plane while allowing quick removal during maintenance.
+        I also turned custom servo and roller couplers from 303 stainless
+        steel, maintaining an interference/press fit for clamping. Custom
+        dovetail gauge blocks allowed me to align the recoating rollers
+        in-plane while still enabling rapid removal for maintenance.
       </p>
     </div>
 
@@ -160,8 +162,8 @@
       <div class="story-text">
         <h3>UV &amp; LCD Masking</h3>
         <p>
-          Each UV power supply dims via a 0–10V analog signal. By
-          integrating an EL4001 bus terminal, the PLC can directly manage
+          Each UV power supply dims through a 0–10&nbsp;V analog signal. By
+          integrating an EL4001 bus terminal, the PLC directly manages
           power output across all ten supplies simultaneously. Layer
           masking is driven through LCD panels controlled by a custom
           Python slicer script.
@@ -197,10 +199,10 @@
       <div class="story-text">
         <h3>Tramming &amp; First Prints</h3>
         <p>
-          Initial alignment showed the build plate was approximately 1° out
-          of plane from the breadboard. Precise shimming at the standoffs
-          corrected the offset and aligned the plate parallel to the resin
-          vat.
+          Initial alignment showed the build plate to be approximately 1°
+          out of plane relative to the breadboard. Precise shimming at the
+          standoffs corrected the offset and aligned the plate parallel to
+          the resin vat.
         </p>
         <p>
           During initial test runs with 0.5&nbsp;mm layer heights and
