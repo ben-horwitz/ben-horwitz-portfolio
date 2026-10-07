@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HV‑VPP Resin Printer - Ben Horwitz</title>
-<meta name="description" content="A high-viscosity vat photopolymerization 3D printer - I wrote the full PLC controls framework and designed, machined, and assembled the mechanical system.">
+<meta name="description" content="A large-format (350 x 400 mm) vat photopolymerization system for high-viscosity silicone: PLC controls, mechanical hardware, and first multilayer prints.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=34">
+<link rel="stylesheet" href="../css/style.css?v=35">
 </head>
 <body>
 
@@ -54,9 +54,10 @@
         <p class="eyebrow">Controls &amp; Mechanical Design <span class="eyebrow-index">- 01 / 06</span></p>
         <h1>HV‑VPP Resin Printer</h1>
         <p class="tagline">
-          I designed and built a custom high-viscosity vat
-          photopolymerization (HV-VPP) 3D printer, enabling the creation of
-          silicone actuators for eventual use in soft robotics.
+          I designed the PLC controls and key mechanical hardware for a
+          large-format, high-viscosity vat photopolymerization (HV-VPP)
+          printer, enabling the creation of silicone actuators for eventual
+          use in soft robotics.
         </p>
         <dl class="spec-row">
           <div><dt>Lab</dt><dd>Digital Design &amp; Manufacturing Lab</dd></div>
@@ -72,6 +73,13 @@
   </div>
 
   <div class="story">
+    <div class="stat-row">
+      <div class="stat"><span class="stat-value">350 &times; 400 mm</span><span class="stat-label">Imaging Plane</span></div>
+      <div class="stat"><span class="stat-value">2 &times; 8K</span><span class="stat-label">UV Displays</span></div>
+      <div class="stat"><span class="stat-value">~0.32 mm</span><span class="stat-label">Resolution</span></div>
+      <div class="stat"><span class="stat-value">385 nm</span><span class="stat-label">UV Exposure, 9.2 mW/cm&sup2;</span></div>
+    </div>
+
     <div class="story-text">
       <p>
         <strong>HV-VPP stands for high-viscosity vat photopolymerization</strong>
@@ -79,7 +87,20 @@
         layer by layer. While standard resin printers rely on thin,
         low-viscosity resins, this machine processes dense, high-viscosity
         materials, requiring a custom approach to layer recoating and
-        leveling.
+        leveling. The system was originally commissioned by Lawrence
+        Livermore National Laboratory for processing low-reactivity,
+        high-viscosity polymers.
+      </p>
+      <p>
+        Two 8K, 385&nbsp;nm UV displays produce a 350 &times; 400&nbsp;mm
+        imaging plane at roughly 0.32&nbsp;mm resolution. That combination
+        is the core challenge: a large imaging area at high spatial
+        resolution, a low-intensity cure (9.2&nbsp;mW/cm&sup2;), and a
+        highly viscous, filler-loaded silicone. Illuminated regions overcure
+        into neighboring dark regions - across a nominal ~1&nbsp;mm gap, the
+        overcure can be substantial depending on how much area surrounds it
+        - so holding feature resolution depends on getting the exposure,
+        recoating, and mechanical alignment right together.
       </p>
       <p>
         I joined the project when it consisted primarily of a printer frame
@@ -89,6 +110,32 @@
         control system and engineered the machine's key mechanical
         hardware</strong>.
       </p>
+    </div>
+
+    <div class="story-text">
+      <h3>Material Challenge</h3>
+      <p>
+        The system was developed around difficult silicone formulations
+        rather than conventional low-viscosity resins. The formulation we
+        printed cures through thiol-ene photopolymerization and contains
+        8&nbsp;wt.% fumed silica (R812S), which raises viscosity and adds
+        challenges for optical exposure and feature resolution. The
+        chemistry cures at relatively low light intensity, which allows
+        lower photoinitiator concentrations and can improve long-term
+        material stability.
+      </p>
+    </div>
+
+    <div class="story-text">
+      <h3>My Contribution</h3>
+      <ul class="fact-list">
+        <li>Designed the PLC control system (Beckhoff, TwinCAT) and configured it as an EtherCAT master driving every motor and actuator</li>
+        <li>Designed and FEA-validated (400&nbsp;lbf, static and buckling) the SLS-nylon standoffs that rigidize the optical breadboard to the frame</li>
+        <li>Machined 303 stainless servo and roller couplers and the dovetail gauge blocks that align the recoating rollers</li>
+        <li>Integrated an EL4001 terminal so the PLC dims all ten UV supplies over 0&ndash;10&nbsp;V</li>
+        <li>Developed the custom Python slicer script that drives the LCD masks</li>
+        <li>Trammed the build plate to the vat and ran the first prints</li>
+      </ul>
     </div>
 
     <div class="story-row">
@@ -209,9 +256,9 @@
           During initial test runs with 0.5&nbsp;mm layer heights and
           1-minute exposure times, the printer successfully cured
           three-layer test structures measuring 1.5&nbsp;mm in thickness.
-          Future iterations will focus on improving layer-to-layer
-          adhesion, refining load distribution across the build plate, and
-          adjusting the Z-axis homing logic.
+          The open items at that stage were layer-to-layer adhesion, load
+          distribution across the build plate, and the Z-axis homing
+          logic.
         </p>
       </div>
     </div>
@@ -228,6 +275,16 @@
         <img src="../assets/img/hv-vpp-printer-outside.jpg" alt="Printer, exterior view">
         <figcaption>The finished machine</figcaption>
       </figure>
+    </div>
+
+    <div class="story-text">
+      <h3>Result</h3>
+      <p>
+        The printer produced a thymine-based silicone actuator 44 layers
+        thick: 0.5&nbsp;mm layers, 22&nbsp;mm final height. That is a
+        multilayer structure in a highly viscous, filler-loaded silicone,
+        built on the platform described above.
+      </p>
     </div>
 
     <div class="story-media-pair">
